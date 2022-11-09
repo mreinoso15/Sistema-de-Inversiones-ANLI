@@ -94,7 +94,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(277, 122);
             this.button5.TabIndex = 3;
-            this.button5.Text = "button5";
+            this.button5.Text = "Ingresar Interes ";
             this.button5.UseVisualStyleBackColor = false;
             // 
             // button4
@@ -105,7 +105,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(277, 122);
             this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
+            this.button4.Text = "Solicitudes de Retiro";
             this.button4.UseVisualStyleBackColor = false;
             // 
             // button3
@@ -116,7 +116,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(277, 122);
             this.button3.TabIndex = 3;
-            this.button3.Text = "button3";
+            this.button3.Text = "Solicitudes de Deposito";
             this.button3.UseVisualStyleBackColor = false;
             // 
             // button2
@@ -127,7 +127,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(277, 122);
             this.button2.TabIndex = 3;
-            this.button2.Text = "button2";
+            this.button2.Text = "Generar Reportes";
             this.button2.UseVisualStyleBackColor = false;
             // 
             // button1
@@ -138,7 +138,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(277, 122);
             this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
+            this.button1.Text = "Solicitudes de Registro al Sistema";
             this.button1.UseVisualStyleBackColor = false;
             // 
             // label2
