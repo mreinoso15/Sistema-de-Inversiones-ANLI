@@ -3,9 +3,10 @@ C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\Ad
 C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\AdminInversiones.pdb
 C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\obj\Debug\AdminInversiones.csproj.AssemblyReference.cache
 C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\obj\Debug\AdminInversiones.csproj.SuggestedBindingRedirects.cache
-C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\obj\Debug\AdminInversiones.Form1.resources
 C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\obj\Debug\AdminInversiones.Properties.Resources.resources
 C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\obj\Debug\AdminInversiones.csproj.GenerateResource.cache
 C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\obj\Debug\AdminInversiones.csproj.CoreCompileInputs.cache
 C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\obj\Debug\AdminInversiones.exe
 C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\obj\Debug\AdminInversiones.pdb
+C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\obj\Debug\AdminInversiones.frm_Principal.resources
+C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\obj\Debug\AdminInversiones.frm_SolicitudesRegistro.resources
