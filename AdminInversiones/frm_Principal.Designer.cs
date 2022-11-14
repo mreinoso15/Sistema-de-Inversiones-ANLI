@@ -83,7 +83,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(277, 122);
             this.button6.TabIndex = 4;
-            this.button6.Text = "button6";
+            this.button6.Text = "Cerrar Sesion ";
             this.button6.UseVisualStyleBackColor = false;
             // 
             // button5
