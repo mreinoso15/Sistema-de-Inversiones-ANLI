@@ -37,10 +37,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -69,7 +69,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(277, 122);
             this.button6.TabIndex = 5;
-            this.button6.Text = "button6";
+            this.button6.Text = "Cerrar Sesion";
             this.button6.UseVisualStyleBackColor = false;
             // 
             // button5
@@ -149,17 +149,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(960, 727);
             this.dataGridView1.TabIndex = 1;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.DarkOrange;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(576, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(354, 37);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Solicitudes de registro";
-            // 
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -180,6 +169,17 @@
             this.Column3.HeaderText = "Fecha";
             this.Column3.MinimumWidth = 8;
             this.Column3.Name = "Column3";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.DarkOrange;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(576, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(354, 37);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Solicitudes de registro";
             // 
             // button7
             // 
