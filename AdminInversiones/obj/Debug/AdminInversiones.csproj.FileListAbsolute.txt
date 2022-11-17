@@ -12,3 +12,4 @@ C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\obj\Debug\Ad
 C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\obj\Debug\AdminInversiones.frm_SolicitudesRegistro.resources
 C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\obj\Debug\AdminInversiones.frm_Reportes.resources
 C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\obj\Debug\AdminInversiones.frm_SolicitudDeposito.resources
+C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\obj\Debug\AdminInversiones.frm_SolicitudRetiro.resources

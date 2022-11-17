@@ -16,5 +16,49 @@ namespace AdminInversiones
         {
             InitializeComponent();
         }
+
+        private void btn_Principal_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frm_Principal frmPrincipal = new frm_Principal();
+            frmPrincipal.ShowDialog();
+            this.Close();
+        }
+
+        private void btn_Reportes_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frm_Reportes frmReportes = new frm_Reportes();
+            frmReportes.ShowDialog();   
+            this.Close();
+        }
+
+        private void btn_Deposito_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frm_SolicitudDeposito frmDeposito = new frm_SolicitudDeposito();
+            frmDeposito.ShowDialog();
+            this.Close();
+        }
+
+        private void btn_Retiro_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frm_SolicitudRetiro frmRetiro = new frm_SolicitudRetiro();
+            frmRetiro.ShowDialog();
+            this.Close();
+        }
+
+        private void btn_Intereses_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
+        }
+
+        private void btn_Salir_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
+        }
     }
 }
