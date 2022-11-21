@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Salir = new System.Windows.Forms.Button();
+            this.btn_Intereses = new System.Windows.Forms.Button();
+            this.btn_Retiro = new System.Windows.Forms.Button();
+            this.btn_Deposito = new System.Windows.Forms.Button();
+            this.btn_Reportes = new System.Windows.Forms.Button();
+            this.btn_Principal = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,82 +50,88 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Orange;
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btn_Salir);
+            this.panel1.Controls.Add(this.btn_Intereses);
+            this.panel1.Controls.Add(this.btn_Retiro);
+            this.panel1.Controls.Add(this.btn_Deposito);
+            this.panel1.Controls.Add(this.btn_Reportes);
+            this.panel1.Controls.Add(this.btn_Principal);
             this.panel1.Location = new System.Drawing.Point(3, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(283, 840);
             this.panel1.TabIndex = 0;
             // 
-            // button6
+            // btn_Salir
             // 
-            this.button6.BackColor = System.Drawing.Color.Bisque;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button6.Location = new System.Drawing.Point(3, 711);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(277, 122);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Cerrar Sesion";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btn_Salir.BackColor = System.Drawing.Color.Bisque;
+            this.btn_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Salir.Location = new System.Drawing.Point(3, 711);
+            this.btn_Salir.Name = "btn_Salir";
+            this.btn_Salir.Size = new System.Drawing.Size(277, 122);
+            this.btn_Salir.TabIndex = 5;
+            this.btn_Salir.Text = "Cerrar Sesion";
+            this.btn_Salir.UseVisualStyleBackColor = false;
+            this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
             // 
-            // button5
+            // btn_Intereses
             // 
-            this.button5.BackColor = System.Drawing.Color.Bisque;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button5.Location = new System.Drawing.Point(3, 589);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(277, 122);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Ingresar Interes ";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btn_Intereses.BackColor = System.Drawing.Color.Bisque;
+            this.btn_Intereses.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Intereses.Location = new System.Drawing.Point(3, 589);
+            this.btn_Intereses.Name = "btn_Intereses";
+            this.btn_Intereses.Size = new System.Drawing.Size(277, 122);
+            this.btn_Intereses.TabIndex = 4;
+            this.btn_Intereses.Text = "Ingresar Interes ";
+            this.btn_Intereses.UseVisualStyleBackColor = false;
+            this.btn_Intereses.Click += new System.EventHandler(this.btn_Intereses_Click);
             // 
-            // button4
+            // btn_Retiro
             // 
-            this.button4.BackColor = System.Drawing.Color.Bisque;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Location = new System.Drawing.Point(3, 467);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(277, 122);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Solicitudes de Retiro";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btn_Retiro.BackColor = System.Drawing.Color.Bisque;
+            this.btn_Retiro.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Retiro.Location = new System.Drawing.Point(3, 467);
+            this.btn_Retiro.Name = "btn_Retiro";
+            this.btn_Retiro.Size = new System.Drawing.Size(277, 122);
+            this.btn_Retiro.TabIndex = 3;
+            this.btn_Retiro.Text = "Solicitudes de Retiro";
+            this.btn_Retiro.UseVisualStyleBackColor = false;
+            this.btn_Retiro.Click += new System.EventHandler(this.btn_Retiro_Click);
             // 
-            // button3
+            // btn_Deposito
             // 
-            this.button3.BackColor = System.Drawing.Color.Bisque;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Location = new System.Drawing.Point(3, 345);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(277, 122);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Solicitudes de Deposito";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btn_Deposito.BackColor = System.Drawing.Color.Bisque;
+            this.btn_Deposito.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Deposito.Location = new System.Drawing.Point(3, 345);
+            this.btn_Deposito.Name = "btn_Deposito";
+            this.btn_Deposito.Size = new System.Drawing.Size(277, 122);
+            this.btn_Deposito.TabIndex = 2;
+            this.btn_Deposito.Text = "Solicitudes de Deposito";
+            this.btn_Deposito.UseVisualStyleBackColor = false;
+            this.btn_Deposito.Click += new System.EventHandler(this.btn_Deposito_Click);
             // 
-            // button2
+            // btn_Reportes
             // 
-            this.button2.BackColor = System.Drawing.Color.Bisque;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Location = new System.Drawing.Point(3, 223);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(277, 122);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Generar Reportes";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btn_Reportes.BackColor = System.Drawing.Color.Bisque;
+            this.btn_Reportes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Reportes.Location = new System.Drawing.Point(3, 223);
+            this.btn_Reportes.Name = "btn_Reportes";
+            this.btn_Reportes.Size = new System.Drawing.Size(277, 122);
+            this.btn_Reportes.TabIndex = 1;
+            this.btn_Reportes.Text = "Generar Reportes";
+            this.btn_Reportes.UseVisualStyleBackColor = false;
+            this.btn_Reportes.Click += new System.EventHandler(this.btn_Reportes_Click);
             // 
-            // button1
+            // btn_Principal
             // 
-            this.button1.BackColor = System.Drawing.Color.Bisque;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(3, 101);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(277, 122);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Menu Principal";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_Principal.BackColor = System.Drawing.Color.Bisque;
+            this.btn_Principal.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Principal.Location = new System.Drawing.Point(3, 101);
+            this.btn_Principal.Name = "btn_Principal";
+            this.btn_Principal.Size = new System.Drawing.Size(277, 122);
+            this.btn_Principal.TabIndex = 0;
+            this.btn_Principal.Text = "Menu Principal";
+            this.btn_Principal.UseVisualStyleBackColor = false;
+            this.btn_Principal.Click += new System.EventHandler(this.btn_Principal_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -142,6 +148,7 @@
             this.Column1,
             this.Column2,
             this.Column3});
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(302, 107);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
@@ -224,12 +231,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_Principal;
+        private System.Windows.Forms.Button btn_Reportes;
+        private System.Windows.Forms.Button btn_Salir;
+        private System.Windows.Forms.Button btn_Intereses;
+        private System.Windows.Forms.Button btn_Retiro;
+        private System.Windows.Forms.Button btn_Deposito;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
