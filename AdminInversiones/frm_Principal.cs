@@ -15,8 +15,12 @@ namespace AdminInversiones
       
         public frm_Principal()
         {
+
             InitializeComponent();
-            
+            ConexionBD conexion = new ConexionBD();
+            conexion.conectar();
+
+
         }
         //Eventos de Cambio de Pagina
         private void btn_Registros_Click(object sender, EventArgs e)
@@ -26,6 +30,7 @@ namespace AdminInversiones
             frm_SolicitudesRegistro frmSolicitudesRegistro = new frm_SolicitudesRegistro();
             frmSolicitudesRegistro.ShowDialog();
             this.Close();
+            
         }
 
         private void btn_Reportes_Click(object sender, EventArgs e)
