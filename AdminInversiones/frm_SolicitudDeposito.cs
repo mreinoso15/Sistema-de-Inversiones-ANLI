@@ -12,9 +12,12 @@ namespace AdminInversiones
 {
     public partial class frm_SolicitudDeposito : Form
     {
+        int idDeposito;
+        ConexionBD conexion;
         public frm_SolicitudDeposito()
         {
             InitializeComponent();
+            
         }
         //Cambio entre formularios
         private void btn_Principal_Click(object sender, EventArgs e)
@@ -60,6 +63,49 @@ namespace AdminInversiones
         {
             this.Hide();
             this.Close();
+        }
+
+        private void frm_SolicitudDeposito_Load(object sender, EventArgs e)
+        {
+            //LLENAR LA TABLA CON LOS VALORES DE LA BASE DE DATOS
+            conexion = new ConexionBD();
+            dataGridView1.DataSource = conexion.obtenerSolicitudesDeposito();
+            
+        }
+
+        private void btn_Aceptar_Click(object sender, EventArgs e)
+        {
+            if(dataGridView1.CurrentRow.Selected == true)
+            {
+                conexion.aceptarSolicitudDeposito(idDeposito);
+                dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
+                MessageBox.Show("La solicitud ha sido aceptada");
+                
+            }
+            else
+            {
+                MessageBox.Show("Favor de seleccionar una fila primero");
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            idDeposito = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["ID Deposito"].Value.ToString());
+        }
+
+        private void btn_Rechazar_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow.Selected == true)
+            {
+                conexion.rechazarSolicitudDeposito(idDeposito);
+                dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
+                MessageBox.Show("La solicitud ha sido rechazada correctamente");
+
+            }
+            else
+            {
+                MessageBox.Show("Favor de seleccionar una fila primero");
+            }
         }
     }
 }

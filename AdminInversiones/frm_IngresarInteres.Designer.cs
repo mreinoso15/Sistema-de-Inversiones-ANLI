@@ -64,6 +64,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Menu Principal";
             this.button1.UseVisualStyleBackColor = false;
+           
             // 
             // button2
             // 

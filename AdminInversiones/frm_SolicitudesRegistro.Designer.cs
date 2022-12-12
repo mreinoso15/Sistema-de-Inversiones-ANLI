@@ -37,12 +37,9 @@
             this.btn_Principal = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btn_AceptarSolicitud = new System.Windows.Forms.Button();
+            this.btn_RechazarSolicitud = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -143,39 +140,19 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3});
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(302, 107);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(960, 727);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.HeaderText = "Nombre";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.HeaderText = "No. Socio";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column3.HeaderText = "Fecha";
-            this.Column3.MinimumWidth = 8;
-            this.Column3.Name = "Column3";
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // label1
             // 
@@ -188,37 +165,40 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Solicitudes de registro";
             // 
-            // button7
+            // btn_AceptarSolicitud
             // 
-            this.button7.Location = new System.Drawing.Point(1303, 127);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(230, 97);
-            this.button7.TabIndex = 2;
-            this.button7.Text = "Aceptar Solicitud";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btn_AceptarSolicitud.Location = new System.Drawing.Point(1303, 127);
+            this.btn_AceptarSolicitud.Name = "btn_AceptarSolicitud";
+            this.btn_AceptarSolicitud.Size = new System.Drawing.Size(230, 97);
+            this.btn_AceptarSolicitud.TabIndex = 2;
+            this.btn_AceptarSolicitud.Text = "Aceptar Solicitud";
+            this.btn_AceptarSolicitud.UseVisualStyleBackColor = true;
+            this.btn_AceptarSolicitud.Click += new System.EventHandler(this.btn_AceptarSolicitud_Click);
             // 
-            // button8
+            // btn_RechazarSolicitud
             // 
-            this.button8.Location = new System.Drawing.Point(1303, 258);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(230, 97);
-            this.button8.TabIndex = 3;
-            this.button8.Text = "Rechazar Solicitud";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btn_RechazarSolicitud.Location = new System.Drawing.Point(1303, 258);
+            this.btn_RechazarSolicitud.Name = "btn_RechazarSolicitud";
+            this.btn_RechazarSolicitud.Size = new System.Drawing.Size(230, 97);
+            this.btn_RechazarSolicitud.TabIndex = 3;
+            this.btn_RechazarSolicitud.Text = "Rechazar Solicitud";
+            this.btn_RechazarSolicitud.UseVisualStyleBackColor = true;
+            this.btn_RechazarSolicitud.Click += new System.EventHandler(this.btn_RechazarSolicitud_Click);
             // 
             // frm_SolicitudesRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1545, 837);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.btn_RechazarSolicitud);
+            this.Controls.Add(this.btn_AceptarSolicitud);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "frm_SolicitudesRegistro";
             this.Text = "frm_SolicitudesRegistro";
+            this.Load += new System.EventHandler(this.frm_SolicitudesRegistro_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -238,10 +218,7 @@
         private System.Windows.Forms.Button btn_Retiro;
         private System.Windows.Forms.Button btn_Deposito;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btn_AceptarSolicitud;
+        private System.Windows.Forms.Button btn_RechazarSolicitud;
     }
 }

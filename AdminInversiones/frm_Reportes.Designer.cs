@@ -38,21 +38,21 @@
             this.btn_Salir = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmb_Socios = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.btn_ExcelSocio = new System.Windows.Forms.Button();
+            this.btn_PDFSocio = new System.Windows.Forms.Button();
+            this.date_FinReporteSocio = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.date_InicioReporteSocio = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.btn_ExcelFecha = new System.Windows.Forms.Button();
+            this.btn_PDFecha = new System.Windows.Forms.Button();
+            this.date_FinReporteFecha = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.date_InicioReporteFecha = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -159,14 +159,14 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cmb_Socios);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.button8);
-            this.groupBox1.Controls.Add(this.button7);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
+            this.groupBox1.Controls.Add(this.btn_ExcelSocio);
+            this.groupBox1.Controls.Add(this.btn_PDFSocio);
+            this.groupBox1.Controls.Add(this.date_FinReporteSocio);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.date_InicioReporteSocio);
             this.groupBox1.Location = new System.Drawing.Point(304, 106);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(709, 361);
@@ -174,13 +174,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Generar reporte por socio";
             // 
-            // comboBox1
+            // cmb_Socios
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(10, 251);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(292, 28);
-            this.comboBox1.TabIndex = 6;
+            this.cmb_Socios.FormattingEnabled = true;
+            this.cmb_Socios.Location = new System.Drawing.Point(10, 251);
+            this.cmb_Socios.Name = "cmb_Socios";
+            this.cmb_Socios.Size = new System.Drawing.Size(292, 28);
+            this.cmb_Socios.TabIndex = 6;
             // 
             // label4
             // 
@@ -191,30 +191,30 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Socio: ";
             // 
-            // button8
+            // btn_ExcelSocio
             // 
-            this.button8.Location = new System.Drawing.Point(404, 149);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(170, 59);
-            this.button8.TabIndex = 5;
-            this.button8.Text = "Generar Reporte Excel";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btn_ExcelSocio.Location = new System.Drawing.Point(404, 149);
+            this.btn_ExcelSocio.Name = "btn_ExcelSocio";
+            this.btn_ExcelSocio.Size = new System.Drawing.Size(170, 59);
+            this.btn_ExcelSocio.TabIndex = 5;
+            this.btn_ExcelSocio.Text = "Generar Reporte Excel";
+            this.btn_ExcelSocio.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // btn_PDFSocio
             // 
-            this.button7.Location = new System.Drawing.Point(404, 65);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(170, 59);
-            this.button7.TabIndex = 4;
-            this.button7.Text = "Generar Reporte PDF";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btn_PDFSocio.Location = new System.Drawing.Point(404, 65);
+            this.btn_PDFSocio.Name = "btn_PDFSocio";
+            this.btn_PDFSocio.Size = new System.Drawing.Size(170, 59);
+            this.btn_PDFSocio.TabIndex = 4;
+            this.btn_PDFSocio.Text = "Generar Reporte PDF";
+            this.btn_PDFSocio.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker2
+            // date_FinReporteSocio
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(10, 163);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(292, 26);
-            this.dateTimePicker2.TabIndex = 3;
+            this.date_FinReporteSocio.Location = new System.Drawing.Point(10, 163);
+            this.date_FinReporteSocio.Name = "date_FinReporteSocio";
+            this.date_FinReporteSocio.Size = new System.Drawing.Size(292, 26);
+            this.date_FinReporteSocio.TabIndex = 3;
             // 
             // label3
             // 
@@ -234,21 +234,21 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Fecha inicial:";
             // 
-            // dateTimePicker1
+            // date_InicioReporteSocio
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(6, 79);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(296, 26);
-            this.dateTimePicker1.TabIndex = 0;
+            this.date_InicioReporteSocio.Location = new System.Drawing.Point(6, 79);
+            this.date_InicioReporteSocio.Name = "date_InicioReporteSocio";
+            this.date_InicioReporteSocio.Size = new System.Drawing.Size(296, 26);
+            this.date_InicioReporteSocio.TabIndex = 0;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button9);
-            this.groupBox2.Controls.Add(this.button10);
-            this.groupBox2.Controls.Add(this.dateTimePicker3);
+            this.groupBox2.Controls.Add(this.btn_ExcelFecha);
+            this.groupBox2.Controls.Add(this.btn_PDFecha);
+            this.groupBox2.Controls.Add(this.date_FinReporteFecha);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.dateTimePicker4);
+            this.groupBox2.Controls.Add(this.date_InicioReporteFecha);
             this.groupBox2.Location = new System.Drawing.Point(304, 473);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(709, 360);
@@ -256,30 +256,30 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Generar reporte general por fecha";
             // 
-            // button9
+            // btn_ExcelFecha
             // 
-            this.button9.Location = new System.Drawing.Point(408, 160);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(170, 59);
-            this.button9.TabIndex = 11;
-            this.button9.Text = "Generar Reporte Excel";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btn_ExcelFecha.Location = new System.Drawing.Point(408, 160);
+            this.btn_ExcelFecha.Name = "btn_ExcelFecha";
+            this.btn_ExcelFecha.Size = new System.Drawing.Size(170, 59);
+            this.btn_ExcelFecha.TabIndex = 11;
+            this.btn_ExcelFecha.Text = "Generar Reporte Excel";
+            this.btn_ExcelFecha.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // btn_PDFecha
             // 
-            this.button10.Location = new System.Drawing.Point(408, 76);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(170, 59);
-            this.button10.TabIndex = 10;
-            this.button10.Text = "Generar Reporte PDF";
-            this.button10.UseVisualStyleBackColor = true;
+            this.btn_PDFecha.Location = new System.Drawing.Point(408, 76);
+            this.btn_PDFecha.Name = "btn_PDFecha";
+            this.btn_PDFecha.Size = new System.Drawing.Size(170, 59);
+            this.btn_PDFecha.TabIndex = 10;
+            this.btn_PDFecha.Text = "Generar Reporte PDF";
+            this.btn_PDFecha.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker3
+            // date_FinReporteFecha
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(14, 174);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(292, 26);
-            this.dateTimePicker3.TabIndex = 9;
+            this.date_FinReporteFecha.Location = new System.Drawing.Point(14, 174);
+            this.date_FinReporteFecha.Name = "date_FinReporteFecha";
+            this.date_FinReporteFecha.Size = new System.Drawing.Size(292, 26);
+            this.date_FinReporteFecha.TabIndex = 9;
             // 
             // label5
             // 
@@ -299,12 +299,12 @@
             this.label6.TabIndex = 7;
             this.label6.Text = "Fecha inicial:";
             // 
-            // dateTimePicker4
+            // date_InicioReporteFecha
             // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(10, 90);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(296, 26);
-            this.dateTimePicker4.TabIndex = 6;
+            this.date_InicioReporteFecha.Location = new System.Drawing.Point(10, 90);
+            this.date_InicioReporteFecha.Name = "date_InicioReporteFecha";
+            this.date_InicioReporteFecha.Size = new System.Drawing.Size(296, 26);
+            this.date_InicioReporteFecha.TabIndex = 6;
             // 
             // frm_Reportes
             // 
@@ -325,6 +325,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frm_Reportes";
             this.Text = "frm_Reportes";
+            this.Load += new System.EventHandler(this.frm_Reportes_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -346,20 +347,20 @@
         private System.Windows.Forms.Button btn_Salir;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmb_Socios;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Button btn_ExcelSocio;
+        private System.Windows.Forms.Button btn_PDFSocio;
+        private System.Windows.Forms.DateTimePicker date_FinReporteSocio;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker date_InicioReporteSocio;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.Button btn_ExcelFecha;
+        private System.Windows.Forms.Button btn_PDFecha;
+        private System.Windows.Forms.DateTimePicker date_FinReporteFecha;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
+        private System.Windows.Forms.DateTimePicker date_InicioReporteFecha;
     }
 }

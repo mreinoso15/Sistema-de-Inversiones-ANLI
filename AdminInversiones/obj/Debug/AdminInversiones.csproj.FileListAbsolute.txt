@@ -13,3 +13,16 @@ C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\obj\Debug\Ad
 C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\obj\Debug\AdminInversiones.frm_Reportes.resources
 C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\obj\Debug\AdminInversiones.frm_SolicitudDeposito.resources
 C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\obj\Debug\AdminInversiones.frm_SolicitudRetiro.resources
+C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\obj\Debug\AdminInversiones.frm_IngresarInteres.resources
+C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\MySql.Data.dll
+C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\Google.Protobuf.dll
+C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\ZstdNet.dll
+C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\System.Memory.dll
+C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\System.Buffers.dll
+C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\MySql.Data.xml
+C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\obj\Debug\AdminInversiones.exe.config
+C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\obj\Debug\AdminInversiones.csproj.CopyComplete
