@@ -15,12 +15,7 @@ namespace AdminInversiones
       
         public frm_Principal()
         {
-
-            InitializeComponent();
-            ConexionBD conexion = new ConexionBD();
-            conexion.conectar();
-
-
+            InitializeComponent();  
         }
         //Eventos de Cambio de Pagina
         private void btn_Registros_Click(object sender, EventArgs e)

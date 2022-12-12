@@ -12,6 +12,7 @@ namespace AdminInversiones
 {
     public partial class frm_Reportes : Form
     {
+        ConexionBD conexion;
         public frm_Reportes()
         {
             InitializeComponent();
@@ -61,6 +62,16 @@ namespace AdminInversiones
         {
             this.Hide();
             this.Close();
+        }
+
+        private void frm_Reportes_Load(object sender, EventArgs e)
+        {
+            conexion = new ConexionBD();
+            //conexion.popularComboSocios();
+            while (conexion.popularComboSocios().Read())
+            {
+                cmb_Socios.Items.Add(conexion.popularComboSocios().GetString("Nombre"));
+            }
         }
     }
 }

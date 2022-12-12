@@ -12,6 +12,8 @@ namespace AdminInversiones
 {
     public partial class frm_SolicitudRetiro : Form
     {
+        int idRetiro;
+        ConexionBD conexion;
         public frm_SolicitudRetiro()
         {
             InitializeComponent();
@@ -59,6 +61,55 @@ namespace AdminInversiones
         {
             this.Hide();
             this.Close();
+        }
+
+        private void frm_SolicitudRetiro_Load(object sender, EventArgs e)
+        {
+            conexion = new ConexionBD();
+            dataGridView1.DataSource = conexion.obtenerSolicitudesRetiro();
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            idRetiro = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["ID Retiro"].Value.ToString());
+        }
+
+        private void btn_Aprovar_Click(object sender, EventArgs e)
+        {
+            
+            if (dataGridView1.CurrentRow.Selected == true)
+            {
+                if(cmb_Motivos.SelectedIndex != -1)
+                {
+                    string motivo = cmb_Motivos.SelectedItem.ToString();
+                    conexion.aceptarSolicitudRetiro(idRetiro,motivo);
+                    dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
+                    MessageBox.Show("La solicitud ha sido aceptada correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("Selecciona un motivo de retiro primero.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Favor de seleccionar una fila primero");
+            }
+        }
+
+        private void btn_Rechazar_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow.Selected == true)
+            {
+                conexion.rechazarSolicitudRetiro(idRetiro);
+                dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
+                MessageBox.Show("La solicitud ha sido rechazada correctamente");
+
+            }
+            else
+            {
+                MessageBox.Show("Favor de seleccionar una fila primero");
+            }
         }
     }
 }

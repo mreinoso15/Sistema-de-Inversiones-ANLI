@@ -37,14 +37,11 @@
             this.btn_Intereses = new System.Windows.Forms.Button();
             this.btn_Salir = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmb_Motivos = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btn_Aprovar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.btn_Rechazar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -138,54 +135,31 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4});
             this.dataGridView1.Location = new System.Drawing.Point(302, 107);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(960, 727);
             this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // Column1
+            // cmb_Motivos
             // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.HeaderText = "No. Socio";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.HeaderText = "Nombre Socio";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column3.HeaderText = "Cantidad";
-            this.Column3.MinimumWidth = 8;
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column4.HeaderText = "Fecha Solicitud";
-            this.Column4.MinimumWidth = 8;
-            this.Column4.Name = "Column4";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(1294, 149);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(239, 28);
-            this.comboBox1.TabIndex = 9;
+            this.cmb_Motivos.FormattingEnabled = true;
+            this.cmb_Motivos.Items.AddRange(new object[] {
+            "Motivo 1",
+            "Motivo 2",
+            "Motivo 3",
+            "Motivo 4"});
+            this.cmb_Motivos.Location = new System.Drawing.Point(1294, 149);
+            this.cmb_Motivos.Name = "cmb_Motivos";
+            this.cmb_Motivos.Size = new System.Drawing.Size(239, 28);
+            this.cmb_Motivos.TabIndex = 9;
+            this.cmb_Motivos.Text = "Seleccionar Motivo...";
             // 
             // label1
             // 
@@ -196,14 +170,15 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Motivo del retiro:";
             // 
-            // button7
+            // btn_Aprovar
             // 
-            this.button7.Location = new System.Drawing.Point(1294, 223);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(230, 97);
-            this.button7.TabIndex = 11;
-            this.button7.Text = "Aprovar Retiro";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btn_Aprovar.Location = new System.Drawing.Point(1294, 223);
+            this.btn_Aprovar.Name = "btn_Aprovar";
+            this.btn_Aprovar.Size = new System.Drawing.Size(230, 97);
+            this.btn_Aprovar.TabIndex = 11;
+            this.btn_Aprovar.Text = "Aprovar Retiro";
+            this.btn_Aprovar.UseVisualStyleBackColor = true;
+            this.btn_Aprovar.Click += new System.EventHandler(this.btn_Aprovar_Click);
             // 
             // label2
             // 
@@ -216,15 +191,26 @@
             this.label2.TabIndex = 12;
             this.label2.Text = "Solicitud de Retiros";
             // 
+            // btn_Rechazar
+            // 
+            this.btn_Rechazar.Location = new System.Drawing.Point(1294, 345);
+            this.btn_Rechazar.Name = "btn_Rechazar";
+            this.btn_Rechazar.Size = new System.Drawing.Size(230, 97);
+            this.btn_Rechazar.TabIndex = 13;
+            this.btn_Rechazar.Text = "Rechazar Retiro";
+            this.btn_Rechazar.UseVisualStyleBackColor = true;
+            this.btn_Rechazar.Click += new System.EventHandler(this.btn_Rechazar_Click);
+            // 
             // frm_SolicitudRetiro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1545, 837);
+            this.Controls.Add(this.btn_Rechazar);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.btn_Aprovar);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmb_Motivos);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_Salir);
             this.Controls.Add(this.btn_Intereses);
@@ -236,6 +222,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frm_SolicitudRetiro";
             this.Text = "frm_SolicitudRetiro";
+            this.Load += new System.EventHandler(this.frm_SolicitudRetiro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -253,13 +240,10 @@
         private System.Windows.Forms.Button btn_Intereses;
         private System.Windows.Forms.Button btn_Salir;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmb_Motivos;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btn_Aprovar;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btn_Rechazar;
     }
 }
