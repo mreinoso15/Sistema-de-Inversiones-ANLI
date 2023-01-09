@@ -26,3 +26,9 @@ C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\K4
 C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\MySql.Data.xml
 C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\obj\Debug\AdminInversiones.exe.config
 C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\obj\Debug\AdminInversiones.csproj.CopyComplete
+C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\EPPlus.dll
+C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\EPPlus.xml
+C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml

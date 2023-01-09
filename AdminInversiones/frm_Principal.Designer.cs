@@ -37,7 +37,7 @@
             this.btn_Depositos = new System.Windows.Forms.Button();
             this.btn_Reportes = new System.Windows.Forms.Button();
             this.btn_Registros = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.btn_CalculoInteres = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -147,15 +147,15 @@
             this.btn_Registros.UseVisualStyleBackColor = false;
             this.btn_Registros.Click += new System.EventHandler(this.btn_Registros_Click);
             // 
-            // label2
+            // btn_CalculoInteres
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(750, 467);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(348, 37);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Place holder IMAGEN";
+            this.btn_CalculoInteres.Location = new System.Drawing.Point(317, 125);
+            this.btn_CalculoInteres.Name = "btn_CalculoInteres";
+            this.btn_CalculoInteres.Size = new System.Drawing.Size(216, 98);
+            this.btn_CalculoInteres.TabIndex = 2;
+            this.btn_CalculoInteres.Text = "Calcular Intereses";
+            this.btn_CalculoInteres.UseVisualStyleBackColor = true;
+            this.btn_CalculoInteres.Click += new System.EventHandler(this.btn_CalculoInteres_Click);
             // 
             // frm_Principal
             // 
@@ -163,7 +163,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1545, 837);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btn_CalculoInteres);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "frm_Principal";
@@ -172,7 +172,6 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -187,7 +186,7 @@
         private System.Windows.Forms.Button btn_Depositos;
         private System.Windows.Forms.Button btn_Reportes;
         private System.Windows.Forms.Button btn_Registros;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btn_CalculoInteres;
     }
 }
 

@@ -12,7 +12,8 @@ namespace AdminInversiones
 {
     public partial class frm_SolicitudDeposito : Form
     {
-        int idDeposito;
+        private int idDeposito, idUsuario;
+        private double cantidadDeposito;
         ConexionBD conexion;
         public frm_SolicitudDeposito()
         {
@@ -80,6 +81,7 @@ namespace AdminInversiones
                 conexion.aceptarSolicitudDeposito(idDeposito);
                 dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
                 MessageBox.Show("La solicitud ha sido aceptada");
+                conexion.actualizarCantidadAhorro(idUsuario, cantidadDeposito);
                 
             }
             else
@@ -91,6 +93,8 @@ namespace AdminInversiones
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             idDeposito = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["ID Deposito"].Value.ToString());
+            cantidadDeposito = double.Parse(dataGridView1.Rows[e.RowIndex].Cells["Cantidad"].Value.ToString());
+            idUsuario = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["No.Socio"].Value.ToString());
         }
 
         private void btn_Rechazar_Click(object sender, EventArgs e)

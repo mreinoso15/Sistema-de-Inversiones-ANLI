@@ -37,8 +37,6 @@
             this.btn_Intereses = new System.Windows.Forms.Button();
             this.btn_Salir = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cmb_Motivos = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.btn_Aprovar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_Rechazar = new System.Windows.Forms.Button();
@@ -147,32 +145,9 @@
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // cmb_Motivos
-            // 
-            this.cmb_Motivos.FormattingEnabled = true;
-            this.cmb_Motivos.Items.AddRange(new object[] {
-            "Motivo 1",
-            "Motivo 2",
-            "Motivo 3",
-            "Motivo 4"});
-            this.cmb_Motivos.Location = new System.Drawing.Point(1294, 149);
-            this.cmb_Motivos.Name = "cmb_Motivos";
-            this.cmb_Motivos.Size = new System.Drawing.Size(239, 28);
-            this.cmb_Motivos.TabIndex = 9;
-            this.cmb_Motivos.Text = "Seleccionar Motivo...";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1290, 107);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 20);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Motivo del retiro:";
-            // 
             // btn_Aprovar
             // 
-            this.btn_Aprovar.Location = new System.Drawing.Point(1294, 223);
+            this.btn_Aprovar.Location = new System.Drawing.Point(1294, 114);
             this.btn_Aprovar.Name = "btn_Aprovar";
             this.btn_Aprovar.Size = new System.Drawing.Size(230, 97);
             this.btn_Aprovar.TabIndex = 11;
@@ -193,7 +168,7 @@
             // 
             // btn_Rechazar
             // 
-            this.btn_Rechazar.Location = new System.Drawing.Point(1294, 345);
+            this.btn_Rechazar.Location = new System.Drawing.Point(1294, 223);
             this.btn_Rechazar.Name = "btn_Rechazar";
             this.btn_Rechazar.Size = new System.Drawing.Size(230, 97);
             this.btn_Rechazar.TabIndex = 13;
@@ -209,8 +184,6 @@
             this.Controls.Add(this.btn_Rechazar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_Aprovar);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.cmb_Motivos);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_Salir);
             this.Controls.Add(this.btn_Intereses);
@@ -240,8 +213,6 @@
         private System.Windows.Forms.Button btn_Intereses;
         private System.Windows.Forms.Button btn_Salir;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox cmb_Motivos;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_Aprovar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_Rechazar;

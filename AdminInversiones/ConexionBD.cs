@@ -12,6 +12,7 @@ namespace AdminInversiones
     internal class ConexionBD
     {
         string server, port, user, password;
+        Inversiones inv;
         public ConexionBD()
         {
             server = "localhost";
@@ -23,14 +24,14 @@ namespace AdminInversiones
         {
             //SE DECLARA A QUE BASE DE DATOS SE CONECTARA
             string cadConexion = "server=" + server + "; port=" + port +
-                "; user id=" + user + "; password=" + password + "; database=proyecto_anli;";
+                "; user id=" + user + "; password=" + password + "; database=proyecto_anli_prueba;";
             
             //SE DECLARA EL COMANDO SQL QUE SE DESEA EJECUTAR 
-            string cadQuery = "SELECT `depositos`.`idDepositos` AS \"ID Deposito\", `usuarios`.`idUsuarios` AS \"No.Socio\",`usuarios`.`Nombre` AS \"Nombre Socio\",Cantidad AS \"Cantidad\", Fecha  AS \"Fecha Solicitud\" " +
-                              "FROM depositos " +
-                              "INNER JOIN usuarios " +
-                              "ON depositos.idUsuarios = usuarios.idUsuarios " +
-                              "WHERE `Estado` = 0;";
+            string cadQuery = "SELECT id_solicitud AS \"ID Deposito\", `usuario`.`id_usuario` AS \"No.Socio\",`usuario`.`nombre_usuario` AS \"Nombre Socio\", cantidad_deposito AS \"Cantidad\", fecha_deposito AS \"Fecha Solicitud\" " +
+                "FROM solicitudes_deposito " +
+                "INNER JOIN usuario " +
+                "ON solicitudes_deposito.id_usuario = usuario.id_usuario " +
+                "WHERE `estado_deposito` = 0;";
 
             //SE CREA EL OBJETO DE LA CONEXION CON LA BASE DE DATOS SQL
             MySqlConnection conexion = new MySqlConnection(cadConexion);
@@ -57,19 +58,19 @@ namespace AdminInversiones
                 MessageBox.Show(ex.Message);
             }
             return null;
-        }
+        } //MODIFICADA NUEVA BD
         public DataTable obtenerSolicitudesRetiro()
         {
             //SE DECLARA A QUE BASE DE DATOS SE CONECTARA
             string cadConexion = "server=" + server + "; port=" + port +
-                "; user id=" + user + "; password=" + password + "; database=proyecto_anli;";
+                "; user id=" + user + "; password=" + password + "; database=proyecto_anli_prueba;";
 
             //SE DECLARA EL COMANDO SQL QUE SE DESEA EJECUTAR 
-            string cadQuery = "SELECT `retiros`.`idRetiros` AS \"ID Retiro\", `usuarios`.`idUsuarios` AS \"No. Socio\",`usuarios`.`Nombre` AS \"Nombre Socio\", Cantidad AS \"Cantidad\", Fecha AS \"Fecha Solicitud\" " +
-                "FROM retiros " +
-                "INNER JOIN usuarios " +
-                "ON retiros.idUsuarios = usuarios.idUsuarios " +
-                "WHERE `Estado` = 0;";
+            string cadQuery = "SELECT id_solicitud AS \"ID Retiro\", `usuario`.`id_usuario` AS \"No. Socio\",`usuario`.`nombre_usuario` AS \"Nombre Socio\", cantidad_retiro AS \"Cantidad\", fecha_retiro AS \"Fecha Solicitud\" " +
+                "FROM solicitudes_retiro " +
+                "INNER JOIN usuario " +
+                "ON solicitudes_retiro.id_usuario = usuario.id_usuario " +
+                "WHERE `estado_retiro` = 0;";
 
             //SE CREA EL OBJETO DE LA CONEXION CON LA BASE DE DATOS SQL
             MySqlConnection conexion = new MySqlConnection(cadConexion);
@@ -96,17 +97,17 @@ namespace AdminInversiones
                 MessageBox.Show(ex.Message);
             }
             return null;
-        }
+        } //MODIFICADA NUEVA BD
         public DataTable obtenerSolicitudesRegistro()
         {
             //SE DECLARA A QUE BASE DE DATOS SE CONECTARA
             string cadConexion = "server=" + server + "; port=" + port +
-                "; user id=" + user + "; password=" + password + "; database=proyecto_anli;";
+                "; user id=" + user + "; password=" + password + "; database=proyecto_anli_prueba;";
 
             //SE DECLARA EL COMANDO SQL QUE SE DESEA EJECUTAR 
-            string cadQuery = "SELECT `idsolicitud_usuarios` AS \"ID SOLICITUD\", `idUsuarios` AS \"ID USUARIO\", `nombreUsuario` AS \"NOMBRE USUARIO\", `fechaSolicitud` AS \"FECHA DE ENVIO DE SOLICITUD\" " +
-                "FROM solicitud_usuarios " +
-                "WHERE `estadoSolicitud` = 0;";
+            string cadQuery = "SELECT `id_solicitud` AS 'ID SOLICITUD',`id_usuario` AS 'ID USUARIO',`nombre_usuario` AS 'NOMBRE USUARIO',`fecha_solicitud` AS 'FECHA DE ENVIO DE SOLICITUD'" +
+                "FROM solicitudes_usuario " +
+                "WHERE `estado_solicitud` = 0;";
 
             //SE CREA EL OBJETO DE LA CONEXION CON LA BASE DE DATOS SQL
             MySqlConnection conexion = new MySqlConnection(cadConexion);
@@ -133,46 +134,16 @@ namespace AdminInversiones
                 MessageBox.Show(ex.Message);
             }
             return null;
-        }
-        public void aceptarSolicitudDeposito(int id)
-        {
-            //SE DECLARA A QUE BASE DE DATOS SE CONECTARA
-            string cadConexion = "server=" + server + "; port=" + port +"; user id=" + user + "; password=" + password + "; database=proyecto_anli;";
-
-            //SE DECLARA EL COMANDO SQL QUE SE DESEA EJECUTAR 
-            string cadQuery = "UPDATE depositos " +
-                              "SET estado = 1 " +
-                              "WHERE idDepositos = "+id+";";
-
-            //SE CREA EL OBJETO DE LA CONEXION CON LA BASE DE DATOS SQL
-            MySqlConnection conexion = new MySqlConnection(cadConexion);
-
-            try
-            {
-                //SE ABRE LA CONEXION CON LA BASE DE DATOS
-                conexion.Open();
-                
-                //SE CREA EL OBJETO COMANDO SQL CON EL QUERY Y LA CONEXION NECESARIA
-                MySqlCommand cmd = new MySqlCommand(cadQuery, conexion);
-                
-                //SE EJECUTA EL COMANDO
-                cmd.ExecuteNonQuery();
-                
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        } //MODIFICADA NUEVA BD 
         public void aceptarSolicitudRegistro(int id)
         {
             //SE DECLARA A QUE BASE DE DATOS SE CONECTARA
-            string cadConexion = "server=" + server + "; port=" + port + "; user id=" + user + "; password=" + password + "; database=proyecto_anli;";
+            string cadConexion = "server=" + server + "; port=" + port + "; user id=" + user + "; password=" + password + "; database=proyecto_anli_prueba;";
 
             //SE DECLARA EL COMANDO SQL QUE SE DESEA EJECUTAR 
-            string cadQuery = "UPDATE `solicitud_usuarios` " +
-                              "SET `estadoSolicitud` = 1 " +
-                              "WHERE `idsolicitud_usuarios` = "+id+";";
+            string cadQuery = "UPDATE `solicitudes_usuario` " +
+                              "SET `estado_solicitud` = 1 " +
+                              "WHERE `id_solicitud` = " + id + ";";
 
             //SE CREA EL OBJETO DE LA CONEXION CON LA BASE DE DATOS SQL
             MySqlConnection conexion = new MySqlConnection(cadConexion);
@@ -193,16 +164,76 @@ namespace AdminInversiones
             {
                 MessageBox.Show(ex.Message);
             }
-        }
+        } //MODIFICADA NUEVA BD
+        public void aceptarSolicitudDeposito(int id)
+        {
+            //SE DECLARA A QUE BASE DE DATOS SE CONECTARA
+            string cadConexion = "server=" + server + "; port=" + port +"; user id=" + user + "; password=" + password + "; database=proyecto_anli_prueba;";
+
+            //SE DECLARA EL COMANDO SQL QUE SE DESEA EJECUTAR 
+            string cadQuery = "UPDATE `solicitudes_deposito` " +
+                              "SET `estado_deposito` = 1 " +
+                              "WHERE `id_solicitud` = " + id + ";";
+
+            //SE CREA EL OBJETO DE LA CONEXION CON LA BASE DE DATOS SQL
+            MySqlConnection conexion = new MySqlConnection(cadConexion);
+
+            try
+            {
+                //SE ABRE LA CONEXION CON LA BASE DE DATOS
+                conexion.Open();
+                
+                //SE CREA EL OBJETO COMANDO SQL CON EL QUERY Y LA CONEXION NECESARIA
+                MySqlCommand cmd = new MySqlCommand(cadQuery, conexion);
+                
+                //SE EJECUTA EL COMANDO
+                cmd.ExecuteNonQuery();
+                
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        } //MODIFICADA NUEVA BD
+        public void aceptarSolicitudRetiro(int id)
+        {
+            //SE DECLARA A QUE BASE DE DATOS SE CONECTARA
+            string cadConexion = "server=" + server + "; port=" + port + "; user id=" + user + "; password=" + password + "; database=proyecto_anli_prueba;";
+
+            //SE DECLARA EL COMANDO SQL QUE SE DESEA EJECUTAR 
+            string cadQuery = "UPDATE `solicitudes_retiro` " +
+                              "SET `estado_retiro` = 1 " +
+                              "WHERE `id_solicitud` = " + id + " ;";
+
+            //SE CREA EL OBJETO DE LA CONEXION CON LA BASE DE DATOS SQL
+            MySqlConnection conexion = new MySqlConnection(cadConexion);
+
+            try
+            {
+                //SE ABRE LA CONEXION CON LA BASE DE DATOS
+                conexion.Open();
+
+                //SE CREA EL OBJETO COMANDO SQL CON EL QUERY Y LA CONEXION NECESARIA
+                MySqlCommand cmd = new MySqlCommand(cadQuery, conexion);
+
+                //SE EJECUTA EL COMANDO
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        } //MODIFICADA NUEVA BD
         public void rechazarSolicitudDeposito(int id)
         {
             //SE DECLARA A QUE BASE DE DATOS SE CONECTARA
-            string cadConexion = "server=" + server + "; port=" + port + "; user id=" + user + "; password=" + password + "; database=proyecto_anli;";
+            string cadConexion = "server=" + server + "; port=" + port + "; user id=" + user + "; password=" + password + "; database=proyecto_anli_prueba;";
 
             //SE DECLARA EL COMANDO SQL QUE SE DESEA EJECUTAR 
-            string cadQuery = "UPDATE depositos " +
-                              "SET estado = 2 " +
-                              "WHERE idDepositos = " + id + ";";
+            string cadQuery = "UPDATE `solicitudes_deposito` " +
+                              "SET `estado_deposito` = 2 " +
+                              "WHERE `id_solicitud` = " + id + ";";
 
             //SE CREA EL OBJETO DE LA CONEXION CON LA BASE DE DATOS SQL
             MySqlConnection conexion = new MySqlConnection(cadConexion);
@@ -223,46 +254,16 @@ namespace AdminInversiones
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-        public void aceptarSolicitudRetiro(int id, string motivo)
-        {
-            //SE DECLARA A QUE BASE DE DATOS SE CONECTARA
-            string cadConexion = "server=" + server + "; port=" + port + "; user id=" + user + "; password=" + password + "; database=proyecto_anli;";
-
-            //SE DECLARA EL COMANDO SQL QUE SE DESEA EJECUTAR 
-            string cadQuery = "UPDATE retiros " +
-                              "SET estado = 1 , Tipo = \""+ motivo +"\" "+
-                              "WHERE idRetiros = "+ id +" ;";
-
-            //SE CREA EL OBJETO DE LA CONEXION CON LA BASE DE DATOS SQL
-            MySqlConnection conexion = new MySqlConnection(cadConexion);
-
-            try
-            {
-                //SE ABRE LA CONEXION CON LA BASE DE DATOS
-                conexion.Open();
-
-                //SE CREA EL OBJETO COMANDO SQL CON EL QUERY Y LA CONEXION NECESARIA
-                MySqlCommand cmd = new MySqlCommand(cadQuery, conexion);
-
-                //SE EJECUTA EL COMANDO
-                cmd.ExecuteNonQuery();
-
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        } //MODIFICADA NUEVA BD
         public void rechazarSolicitudRetiro(int id)
         {
             //SE DECLARA A QUE BASE DE DATOS SE CONECTARA
-            string cadConexion = "server=" + server + "; port=" + port + "; user id=" + user + "; password=" + password + "; database=proyecto_anli;";
+            string cadConexion = "server=" + server + "; port=" + port + "; user id=" + user + "; password=" + password + "; database=proyecto_anli_prueba;";
 
             //SE DECLARA EL COMANDO SQL QUE SE DESEA EJECUTAR 
-            string cadQuery = "UPDATE retiros " +
-                              "SET estado = 2 " +
-                              "WHERE idRetiros = "+id+";";
+            string cadQuery = "UPDATE `solicitudes_retiro` " +
+                              "SET `estado_retiro` = 2 " +
+                              "WHERE `id_solicitud` = " + id + " ;";
 
             //SE CREA EL OBJETO DE LA CONEXION CON LA BASE DE DATOS SQL
             MySqlConnection conexion = new MySqlConnection(cadConexion);
@@ -283,11 +284,11 @@ namespace AdminInversiones
             {
                 MessageBox.Show(ex.Message);
             }
-        }
+        } //MODIFICADAD NUEVA BD
         public void rechazarSolicitudRegistro(int id)
         {
             //SE DECLARA A QUE BASE DE DATOS SE CONECTARA
-            string cadConexion = "server=" + server + "; port=" + port + "; user id=" + user + "; password=" + password + "; database=proyecto_anli;";
+            string cadConexion = "server=" + server + "; port=" + port + "; user id=" + user + "; password=" + password + "; database=proyecto_anli_prueba;";
 
             //SE DECLARA EL COMANDO SQL QUE SE DESEA EJECUTAR 
             string cadQuery = "UPDATE `solicitud_usuarios` " +
@@ -313,15 +314,16 @@ namespace AdminInversiones
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-        public MySqlDataReader popularComboSocios()
+        } // MODIFICADO NUEVO BD
+        public void actualizarCantidadAhorro(int id, double cantidad)
         {
             //SE DECLARA A QUE BASE DE DATOS SE CONECTARA
-            string cadConexion = "server=" + server + "; port=" + port +
-                "; user id=" + user + "; password=" + password + "; database=proyecto_anli;";
+            string cadConexion = "server=" + server + "; port=" + port + "; user id=" + user + "; password=" + password + "; database=proyecto_anli_prueba;";
 
             //SE DECLARA EL COMANDO SQL QUE SE DESEA EJECUTAR 
-            string cadQuery = "SELECT * FROM USUARIOS;";
+            string cadQuery = "UPDATE usuario " +
+                              "SET cantidad_ahorro = cantidad_ahorro +"+ cantidad +
+                              " WHERE id_usuario = "+id+" ;";
 
             //SE CREA EL OBJETO DE LA CONEXION CON LA BASE DE DATOS SQL
             MySqlConnection conexion = new MySqlConnection(cadConexion);
@@ -330,21 +332,57 @@ namespace AdminInversiones
             {
                 //SE ABRE LA CONEXION CON LA BASE DE DATOS
                 conexion.Open();
-                //SE DECLARA EL LECTOR DE DATOS DE LA BASE DE DATOS SQL
-                MySqlDataReader reader = null;
-                //SE EJECUTA EL COMANDO SQL CON LA CONEXION NECESARIA
+
+                //SE CREA EL OBJETO COMANDO SQL CON EL QUERY Y LA CONEXION NECESARIA
                 MySqlCommand cmd = new MySqlCommand(cadQuery, conexion);
-                //SE LE ASIGNA LA INFORMACION QUE REGRESO EL COMANDO SQL
-                reader = cmd.ExecuteReader();
-                
-               return reader;
+
+                //SE EJECUTA EL COMANDO
+                cmd.ExecuteNonQuery();
+
             }
             catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            return null;    
         }
+        public List<Inversiones> obtenerInversiones(List<Inversiones> inversion)
+        {
+            inv = new Inversiones();
+            //SE DECLARA A QUE BASE DE DATOS SE CONECTARA
+            string cadConexion = "server=" + server + "; port=" + port + "; user id=" + user + "; password=" + password + "; database=proyecto_anli_prueba;";
+
+            //SE DECLARA EL COMANDO SQL QUE SE DESEA EJECUTAR 
+            string cadQuery = "SELECT  sd.id_usuario AS 'NoSocio', d.id_deposito AS 'solicitudInv', u.nombre_usuario AS 'Socio', DATE(d.fecha_aprobacion) AS 'Fecha', d.cantidad_deposito AS 'Cantidad', d.tasa_inversion AS 'Tasa' " +
+                              "FROM depositos AS d " +
+                              "INNER JOIN solicitudes_deposito AS sd ON d.id_solicitud = sd.id_solicitud " +
+                              "INNER JOIN usuario as u ON sd.id_usuario = u.id_usuario;";
+
+            //SE CREA EL OBJETO DE LA CONEXION CON LA BASE DE DATOS SQL
+            MySqlConnection conexion = new MySqlConnection(cadConexion);
+
+            try
+            {
+                //SE ABRE LA CONEXION CON LA BASE DE DATOS
+                conexion.Open();
+
+                //SE CREA EL OBJETO COMANDO SQL CON EL QUERY Y LA CONEXION NECESARIA
+                MySqlCommand cmd = new MySqlCommand(cadQuery, conexion);
+
+                //SE EJECUTA EL COMANDO
+                var dataReader = cmd.ExecuteReader();
+
+                //SE LLENA LA LISTA DE INVERSIONES CON LOS DATOS QUE RETORNA EL QUERY SQL 
+                inversion = inv.llenarLista<Inversiones>(dataReader);
+
+                return inversion;
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
+        
 
     }
 }

@@ -68,10 +68,10 @@ namespace AdminInversiones
         {
             conexion = new ConexionBD();
             //conexion.popularComboSocios();
-            while (conexion.popularComboSocios().Read())
-            {
-                cmb_Socios.Items.Add(conexion.popularComboSocios().GetString("Nombre"));
-            }
+            //while (conexion.popularComboSocios().Read())
+            //{
+                //cmb_Socios.Items.Add(conexion.popularComboSocios().GetString("Nombre"));
+            //}
         }
     }
 }
