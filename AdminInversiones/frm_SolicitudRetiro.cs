@@ -76,20 +76,12 @@ namespace AdminInversiones
 
         private void btn_Aprovar_Click(object sender, EventArgs e)
         {
-            
+
             if (dataGridView1.CurrentRow.Selected == true)
             {
-                if(cmb_Motivos.SelectedIndex != -1)
-                {
-                    string motivo = cmb_Motivos.SelectedItem.ToString();
-                    conexion.aceptarSolicitudRetiro(idRetiro,motivo);
-                    dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
-                    MessageBox.Show("La solicitud ha sido aceptada correctamente");
-                }
-                else
-                {
-                    MessageBox.Show("Selecciona un motivo de retiro primero.");
-                }
+                conexion.aceptarSolicitudRetiro(idRetiro);
+                dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
+                MessageBox.Show("La solicitud ha sido aceptada");
             }
             else
             {

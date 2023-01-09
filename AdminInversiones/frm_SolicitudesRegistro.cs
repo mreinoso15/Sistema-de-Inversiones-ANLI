@@ -72,7 +72,6 @@ namespace AdminInversiones
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             idSolicitud = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["ID SOLICITUD"].Value.ToString());
-            MessageBox.Show(idSolicitud + "");
         }
 
         private void btn_AceptarSolicitud_Click(object sender, EventArgs e)
