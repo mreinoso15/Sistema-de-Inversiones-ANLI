@@ -55,6 +55,8 @@ namespace AdminInversiones
         private void btn_Intereses_Click(object sender, EventArgs e)
         {
             this.Hide();
+            frm_IngresarInteres intereses = new frm_IngresarInteres();
+            intereses.ShowDialog();
             this.Close();
         }
 
