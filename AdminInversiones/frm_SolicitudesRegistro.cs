@@ -54,6 +54,8 @@ namespace AdminInversiones
         private void btn_Intereses_Click(object sender, EventArgs e)
         {
             this.Hide();
+            frm_IngresarInteres intereses = new frm_IngresarInteres();
+            intereses.ShowDialog();
             this.Close();
         }
 
@@ -72,6 +74,7 @@ namespace AdminInversiones
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             idSolicitud = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["ID SOLICITUD"].Value.ToString());
+            MessageBox.Show($"{ idSolicitud}");
         }
 
         private void btn_AceptarSolicitud_Click(object sender, EventArgs e)
