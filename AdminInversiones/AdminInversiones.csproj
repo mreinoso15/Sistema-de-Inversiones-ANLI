@@ -108,7 +108,6 @@
     <Compile Include="Inversiones.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ThemeColor.cs" />
     <EmbeddedResource Include="frm_IngresarInteres.resx">
       <DependentUpon>frm_IngresarInteres.cs</DependentUpon>
     </EmbeddedResource>
