@@ -64,6 +64,10 @@ namespace AdminInversiones
         private void btn_Interes_Click(object sender, EventArgs e)
         {
             //Abrir Formulario de Ingreso de Interes 
+            this.Hide();
+            frm_IngresarInteres frmIngresarInteres = new frm_IngresarInteres();
+            frmIngresarInteres.ShowDialog();
+            this.Close();
         }
 
         private void btn_Cerrar_Click(object sender, EventArgs e)
@@ -78,6 +82,7 @@ namespace AdminInversiones
             inversiones = conexionBD.obtenerInversiones(inversiones);
             MessageBox.Show(calcularInteres());
             crearReporteExcel();
+            actualizarIntereses();
 
         }
 
@@ -110,6 +115,14 @@ namespace AdminInversiones
             var file = new FileInfo(@"C:\Users\marti\Documents\Proyecto ANLI Inversiones\ReporteDeInversiones.xlsx");
             documento.GuardarArchivoExcel(inversiones,listaIntereses,listaDias, file);
             MessageBox.Show("Archivo creado exitosamente");
+        }
+
+        private void actualizarIntereses()
+        {
+            for(int i = 0; i < inversiones.Count; i++)
+            {
+                conexionBD.actualizarInteresGenerado(int.Parse(inversiones[i].NoSocio), listaIntereses[i]);
+            }
         }
         private void mostrarInversiones()
         {
