@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Principal));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btn_CerrarSesion = new System.Windows.Forms.Button();
             this.btn_Interes = new System.Windows.Forms.Button();
             this.btn_Retiros = new System.Windows.Forms.Button();
             this.btn_Depositos = new System.Windows.Forms.Button();
@@ -37,7 +38,6 @@
             this.btn_Registros = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.btn_CalculoInteres = new System.Windows.Forms.Button();
-            this.btn_CerrarSesion = new System.Windows.Forms.Button();
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.lblTitleBar = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
@@ -58,8 +58,27 @@
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(252, 670);
+            this.panelMenu.Size = new System.Drawing.Size(300, 670);
             this.panelMenu.TabIndex = 1;
+            // 
+            // btn_CerrarSesion
+            // 
+            this.btn_CerrarSesion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_CerrarSesion.FlatAppearance.BorderSize = 0;
+            this.btn_CerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_CerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CerrarSesion.ForeColor = System.Drawing.Color.GhostWhite;
+            this.btn_CerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btn_CerrarSesion.Image")));
+            this.btn_CerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_CerrarSesion.Location = new System.Drawing.Point(0, 565);
+            this.btn_CerrarSesion.Name = "btn_CerrarSesion";
+            this.btn_CerrarSesion.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btn_CerrarSesion.Size = new System.Drawing.Size(300, 105);
+            this.btn_CerrarSesion.TabIndex = 12;
+            this.btn_CerrarSesion.Text = "Cerrar Sesión";
+            this.btn_CerrarSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_CerrarSesion.UseVisualStyleBackColor = true;
+            this.btn_CerrarSesion.Click += new System.EventHandler(this.btn_CerrarSesion_Click);
             // 
             // btn_Interes
             // 
@@ -70,10 +89,10 @@
             this.btn_Interes.ForeColor = System.Drawing.Color.GhostWhite;
             this.btn_Interes.Image = ((System.Drawing.Image)(resources.GetObject("btn_Interes.Image")));
             this.btn_Interes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Interes.Location = new System.Drawing.Point(0, 432);
+            this.btn_Interes.Location = new System.Drawing.Point(0, 480);
             this.btn_Interes.Name = "btn_Interes";
             this.btn_Interes.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btn_Interes.Size = new System.Drawing.Size(252, 80);
+            this.btn_Interes.Size = new System.Drawing.Size(300, 85);
             this.btn_Interes.TabIndex = 10;
             this.btn_Interes.Text = "Ingresar Interes ";
             this.btn_Interes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -89,10 +108,10 @@
             this.btn_Retiros.ForeColor = System.Drawing.Color.GhostWhite;
             this.btn_Retiros.Image = ((System.Drawing.Image)(resources.GetObject("btn_Retiros.Image")));
             this.btn_Retiros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Retiros.Location = new System.Drawing.Point(0, 352);
+            this.btn_Retiros.Location = new System.Drawing.Point(0, 395);
             this.btn_Retiros.Name = "btn_Retiros";
             this.btn_Retiros.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btn_Retiros.Size = new System.Drawing.Size(252, 80);
+            this.btn_Retiros.Size = new System.Drawing.Size(300, 85);
             this.btn_Retiros.TabIndex = 9;
             this.btn_Retiros.Text = "Solicitudes de Retiro";
             this.btn_Retiros.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -108,10 +127,10 @@
             this.btn_Depositos.ForeColor = System.Drawing.Color.GhostWhite;
             this.btn_Depositos.Image = ((System.Drawing.Image)(resources.GetObject("btn_Depositos.Image")));
             this.btn_Depositos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Depositos.Location = new System.Drawing.Point(0, 272);
+            this.btn_Depositos.Location = new System.Drawing.Point(0, 310);
             this.btn_Depositos.Name = "btn_Depositos";
             this.btn_Depositos.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btn_Depositos.Size = new System.Drawing.Size(252, 80);
+            this.btn_Depositos.Size = new System.Drawing.Size(300, 85);
             this.btn_Depositos.TabIndex = 8;
             this.btn_Depositos.Text = "Solicitudes de Deposito";
             this.btn_Depositos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -127,10 +146,10 @@
             this.btn_Reportes.ForeColor = System.Drawing.Color.GhostWhite;
             this.btn_Reportes.Image = ((System.Drawing.Image)(resources.GetObject("btn_Reportes.Image")));
             this.btn_Reportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Reportes.Location = new System.Drawing.Point(0, 192);
+            this.btn_Reportes.Location = new System.Drawing.Point(0, 225);
             this.btn_Reportes.Name = "btn_Reportes";
             this.btn_Reportes.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btn_Reportes.Size = new System.Drawing.Size(252, 80);
+            this.btn_Reportes.Size = new System.Drawing.Size(300, 85);
             this.btn_Reportes.TabIndex = 7;
             this.btn_Reportes.Text = "Generar Reportes";
             this.btn_Reportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -146,10 +165,10 @@
             this.btn_Registros.ForeColor = System.Drawing.Color.GhostWhite;
             this.btn_Registros.Image = ((System.Drawing.Image)(resources.GetObject("btn_Registros.Image")));
             this.btn_Registros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Registros.Location = new System.Drawing.Point(0, 112);
+            this.btn_Registros.Location = new System.Drawing.Point(0, 140);
             this.btn_Registros.Name = "btn_Registros";
             this.btn_Registros.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btn_Registros.Size = new System.Drawing.Size(252, 80);
+            this.btn_Registros.Size = new System.Drawing.Size(300, 85);
             this.btn_Registros.TabIndex = 6;
             this.btn_Registros.Text = "Solicitudes de Registro al Sistema";
             this.btn_Registros.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -160,15 +179,16 @@
             // 
             this.panelLogo.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panelLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelLogo.BackgroundImage")));
+            this.panelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(252, 112);
+            this.panelLogo.Size = new System.Drawing.Size(300, 140);
             this.panelLogo.TabIndex = 5;
             // 
             // btn_CalculoInteres
             // 
-            this.btn_CalculoInteres.Location = new System.Drawing.Point(614, 227);
+            this.btn_CalculoInteres.Location = new System.Drawing.Point(756, 326);
             this.btn_CalculoInteres.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_CalculoInteres.Name = "btn_CalculoInteres";
             this.btn_CalculoInteres.Size = new System.Drawing.Size(192, 78);
@@ -177,33 +197,14 @@
             this.btn_CalculoInteres.UseVisualStyleBackColor = true;
             this.btn_CalculoInteres.Click += new System.EventHandler(this.btn_CalculoInteres_Click);
             // 
-            // btn_CerrarSesion
-            // 
-            this.btn_CerrarSesion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_CerrarSesion.FlatAppearance.BorderSize = 0;
-            this.btn_CerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_CerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_CerrarSesion.ForeColor = System.Drawing.Color.GhostWhite;
-            this.btn_CerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btn_CerrarSesion.Image")));
-            this.btn_CerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_CerrarSesion.Location = new System.Drawing.Point(0, 512);
-            this.btn_CerrarSesion.Name = "btn_CerrarSesion";
-            this.btn_CerrarSesion.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btn_CerrarSesion.Size = new System.Drawing.Size(252, 80);
-            this.btn_CerrarSesion.TabIndex = 12;
-            this.btn_CerrarSesion.Text = "Cerrar Sesión";
-            this.btn_CerrarSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_CerrarSesion.UseVisualStyleBackColor = true;
-            this.btn_CerrarSesion.Click += new System.EventHandler(this.btn_CerrarSesion_Click);
-            // 
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.panelTitleBar.Controls.Add(this.lblTitleBar);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitleBar.Location = new System.Drawing.Point(252, 0);
+            this.panelTitleBar.Location = new System.Drawing.Point(300, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(1121, 112);
+            this.panelTitleBar.Size = new System.Drawing.Size(1073, 140);
             this.panelTitleBar.TabIndex = 3;
             // 
             // lblTitleBar
@@ -212,7 +213,7 @@
             this.lblTitleBar.AutoSize = true;
             this.lblTitleBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitleBar.ForeColor = System.Drawing.Color.GhostWhite;
-            this.lblTitleBar.Location = new System.Drawing.Point(357, 44);
+            this.lblTitleBar.Location = new System.Drawing.Point(333, 58);
             this.lblTitleBar.Name = "lblTitleBar";
             this.lblTitleBar.Size = new System.Drawing.Size(501, 29);
             this.lblTitleBar.TabIndex = 0;
@@ -227,8 +228,10 @@
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.btn_CalculoInteres);
             this.Controls.Add(this.panelMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frm_Principal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
             this.panelMenu.ResumeLayout(false);
             this.panelTitleBar.ResumeLayout(false);
