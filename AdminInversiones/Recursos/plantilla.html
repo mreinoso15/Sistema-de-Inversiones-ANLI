@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table.border {
+            border-collapse: collapse;
+        }
+
+        table.border th {
+            padding: 5px;
+            border: 1px solid black;
+        }
+
+        table.border td {
+            padding: 5px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table style="width:100%">
+        <tr>
+            <td style="width:20%"><img src="https://scontent.ftpq2-1.fna.fbcdn.net/v/t39.30808-6/305923078_499425468857286_3386195798012956452_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEvU2W2vXBJ2vAxExqutvvlMc8lDccAWSgxzyUNxwBZKO0iQ33ZdZy871LrReQX4gJ4zDuLl6FWIhA8CbJhpumT&_nc_ohc=jdSRhRO5ZF0AX9klTZE&_nc_ht=scontent.ftpq2-1.fna&oh=00_AfCZm7F8bY1bjagGsy5eeq6rl2XlD-n-jk_6yjMu5lCq4w&oe=643D2F80" alt="" style='height: 100%; width: 100%; object-fit: contain'></td>
+            <td style="width:60%" align="center" valign="top">
+                <table style="margin-left: 75px;">
+                    <tr><td align="center"><h4 style="margin:0px">ANLI El Principio De Una Nueva Vida</h4></td></tr>
+                    <tr><td align="center">Av. Juan Escutia 281 Col. Heriberto Casas</td></tr>
+                    <tr><td align="center">Tepic, Nay 63080</td></tr>
+                    <tr><td align="center">Telefono: 311-216-5691</td></tr>
+                </table>
+            </td>
+        </tr>
+
+        <tr><td colspan="3" height="20"></td></tr>
+
+        <tr>
+            <td colspan="2">
+                <table style="width:100%">
+                    <tr>
+                        <td colspan="1" style="width:20%">Cliente:</td>
+                        <td colspan="3" style="width:80%;border-bottom:1px solid black">@CLIENTE</td>
+                    </tr>
+                </table>
+                <table style="width:100%">
+                    <tr>
+                        <td style="width:20%"># de Usuario:</td>
+                        <td style="width:30%;border-bottom:1px solid black">@USERID</td>
+                        <td style="width:10%">Fecha:</td>
+                        <td style="width:40%;border-bottom:1px solid black">@FECHA</td>
+                    </tr>
+                </table>
+            </td>
+            <td></td>
+        </tr>
+
+        <tr><td colspan="3" height="30"></td></tr>
+
+        <tr>
+            <td colspan="3">
+                <table class="border" style="width:100%;">
+                    <thead>
+                        <tr style="background-color:#D8D8D8">
+                            <th># de Retiro/Deposito</th>
+                            <th>Descripcion</th>
+                            <th>Fecha Aprobacion</th>
+                            <th>Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @FILASRETIRO
+                        <tr>
+                            <td style="border: 0px !important"></td>
+                            <td style="border: 0px !important"></td>
+                            <td align="right">Total:</td>
+                            <td style="font-weight: bold;">@TOTAL</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
