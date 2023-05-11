@@ -24,8 +24,31 @@ namespace AdminInversiones
         public double Tasa { get; set; }
     }
 
-    public class Tasa
+    public class Impuestos
     {
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+        public DateTime Fecha { get; set; }
+        public double Cantidad { get; set; }
 
+        public override string ToString()
+        {
+            return Id+" "+Nombre+" "+Fecha.ToString("dd-MM-yyyy")+" "+Cantidad;
+        }
     }
+
+    public class Usuario
+    {
+       public int ID { get; set; }
+       public string Nombre { get; set; }
+       public string Fecha_Registro { get; set; }
+       public double Cantidad_Ahorro { get; set; }
+       public string Estatus { get; set; }
+
+        public override string ToString()
+        {
+            return ID+" "+Nombre+" "+Fecha_Registro+" "+Cantidad_Ahorro+" "+Estatus;
+        }
+    }
+
 }

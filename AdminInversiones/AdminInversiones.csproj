@@ -151,11 +151,11 @@
   <ItemGroup>
     <Compile Include="Classes\ConexionBD.cs" />
     <Compile Include="Classes\Documentos.cs" />
-    <Compile Include="Forms\frm_CalcularInteres.cs">
+    <Compile Include="Forms\frm_CalcularImpuestos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_CalcularInteres.Designer.cs">
-      <DependentUpon>frm_CalcularInteres.cs</DependentUpon>
+    <Compile Include="Forms\frm_CalcularImpuestos.Designer.cs">
+      <DependentUpon>frm_CalcularImpuestos.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frm_IngresarInteres.cs">
       <SubType>Form</SubType>
@@ -200,9 +200,18 @@
       <DependentUpon>frm_SolicitudRetiro.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Inversiones.cs" />
+    <Compile Include="Forms\frm_Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Usuarios.Designer.cs">
+      <DependentUpon>frm_Usuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\ThemeColor.cs" />
+    <EmbeddedResource Include="Forms\frm_CalcularImpuestos.resx">
+      <DependentUpon>frm_CalcularImpuestos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frm_IngresarInteres.resx">
       <DependentUpon>frm_IngresarInteres.cs</DependentUpon>
     </EmbeddedResource>
@@ -223,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frm_SolicitudRetiro.resx">
       <DependentUpon>frm_SolicitudRetiro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Usuarios.resx">
+      <DependentUpon>frm_Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -260,8 +272,15 @@
     <None Include="Recursos\lock.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Recursos\plantilla_usuarios.html" />
+    <None Include="Recursos\unsubscribe.png" />
+    <None Include="Recursos\profile.png" />
+    <None Include="Recursos\plantilla_impuestos.html" />
     <None Include="Recursos\remove.png" />
     <None Include="Recursos\checked.png" />
+    <None Include="Recursos\loupe.png" />
+    <None Include="Recursos\document.png" />
+    <None Include="Recursos\excel.png" />
     <Content Include="Recursos\plantilla.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

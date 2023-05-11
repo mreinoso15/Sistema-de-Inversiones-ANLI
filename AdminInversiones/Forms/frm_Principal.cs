@@ -79,9 +79,8 @@ namespace AdminInversiones
         private void btnCalcularIntereses_Click(object sender, EventArgs e)
         {
             hideSubMenu();
-            conexionBD = new ConexionBD();
-            
-
+            OpenChildForm(new frm_CalcularImpuestos(), sender);
+            lblTitleBar.Text = "Calculo de impuestos Mensuales";
         }
 
         //Metodos Diseno
@@ -172,69 +171,11 @@ namespace AdminInversiones
             childForm.Show();
 
         }
-
-        //Funciones
-        private void codigoBoton()
+               
+        private void btn_Usuarios_Click(object sender, EventArgs e)
         {
-            conexionBD = new ConexionBD();
-            inversiones = conexionBD.obtenerInversiones(inversiones);
-            MessageBox.Show(calcularInteres());
-            crearReporteExcel();
-            actualizarIntereses();
+            OpenChildForm(new frm_Usuarios(), sender);
+            lblTitleBar.Text = "Usuarios";
         }
-        private string calcularInteres()
-        {
-            string cad = "";
-            listaDias = new List<int>();
-            listaIntereses = new List<double>();
-            if (inversiones == null) MessageBox.Show("No hay inversiones a calcular");
-            else
-            {
-                for (int i = 0; i < inversiones.Count; i++)
-                {
-                    int diasInvertidos = (DateTime.Now - inversiones[i].Fecha).Days;
-                    double interes = (Math.Round(inversiones[i].Tasa, 2) * diasInvertidos * Math.Round(inversiones[i].Cantidad, 2)) / 360;
-                    listaIntereses.Add(Math.Round(interes, 2));
-                    listaDias.Add(diasInvertidos);
-
-                    cad += "# de Socio: " + inversiones[i].NoSocio + " " + "\n" +
-                            "Interes generado: " + Math.Round(interes, 2) + "\n" +
-                            "Calculado a " + diasInvertidos + " dias con una tasa de " + inversiones[i].Tasa + "\n\n";
-                }
-                return cad;
-            }
-            return "";
-        }
-        private void crearReporteExcel()
-        {
-            documento = new Documentos();
-            var file = new FileInfo(@"C:\Users\marti\Documents\Proyecto ANLI Inversiones\ReporteDeInversiones.xlsx");
-            documento.GuardarArchivoExcel(inversiones, listaIntereses, listaDias, file);
-            MessageBox.Show("Archivo creado exitosamente");
-        }
-        private void actualizarIntereses()
-        {
-            for (int i = 0; i < inversiones.Count; i++)
-            {
-                conexionBD.actualizarInteresGenerado(inversiones[i].NoSocio, listaIntereses[i]);
-            }
-        }
-        private void mostrarInversiones()
-        {
-            string cad = "";
-            for (int i = 0; i < inversiones.Count; i++)
-            {
-                cad += "# de Socio: " + inversiones[i].NoSocio + " " + "\n" +
-                       "ID del Deposito: " + inversiones[i].solicitudInv + "\n" +
-                       "Nombre Usuario: " + inversiones[i].Socio + "\n" +
-                       "Fecha: " + inversiones[i].Fecha + " " + "\n" +
-                       "Cantidad Invertida: " + inversiones[i].Cantidad + " " + "\n" +
-                       "Tasa de Interes: " + inversiones[i].Tasa + "\n\n";
-
-            }
-
-        }
-
-        
     }
 }

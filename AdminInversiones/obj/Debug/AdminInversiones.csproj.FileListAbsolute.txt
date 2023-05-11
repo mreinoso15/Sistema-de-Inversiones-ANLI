@@ -116,3 +116,5 @@ C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\Sy
 C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\System.ValueTuple.xml
+C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\obj\Debug\AdminInversiones.Forms.frm_CalcularImpuestos.resources
+C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\obj\Debug\AdminInversiones.Forms.frm_Usuarios.resources

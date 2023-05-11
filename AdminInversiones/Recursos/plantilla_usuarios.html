@@ -41,20 +41,15 @@
             <td colspan="2">
                 <table style="width:100%">
                     <tr>
-                        <td colspan="1" style="width:20%">Cliente:</td>
-                        <td colspan="3" style="width:80%;border-bottom:1px solid black">@CLIENTE</td>
+                        <td colspan="1" style="width:60%" align="center"><h3>Listado de usuarios</h3></td>
                     </tr>
                 </table>
                 <table style="width:100%">
                     <tr>
-                        <td style="width:20%"># de Usuario:</td>
-                        <td style="width:30%;border-bottom:1px solid black">@USERID</td>
-                        <td style="width:10%">Fecha:</td>
-                        <td style="width:40%;border-bottom:1px solid black">@FECHA</td>
+                        <td style="width:10%" align="center">Fecha:</td>
+                        <td style="width:40%;border-bottom:1px solid black" align="center">@FECHA</td>
                     </tr>
                 </table>
-            </td>
-            <td></td>
         </tr>
 
         <tr><td colspan="3" height="30"></td></tr>
@@ -64,18 +59,27 @@
                 <table class="border" style="width:100%;">
                     <thead>
                         <tr style="background-color:#D8D8D8">
-                            <th># de Retiro/Deposito</th>
-                            <th>Descripcion</th>
-                            <th>Fecha Aprobacion</th>
-                            <th>Cantidad</th>
+                            <th>ID Usuario</th>
+                            <th>Nombre de Usuario</th>
+                            <th>Fecha de Registro</th>
+                            <th>Cantidad de ahorro</th>
+                            <th>Estatus</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @FILASRETIRO
+                        @FILASUSUARIO
                         <tr>
                             <td style="border: 0px !important"></td>
                             <td style="border: 0px !important"></td>
-                            <td align="right">Total:</td>
+                            <td style="border: 0px !important"></td>
+                            <td align="right">Total de usuarios activos:</td>
+                            <td style="font-weight: bold;">@TOTALACT</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 0px !important"></td>
+                            <td style="border: 0px !important"></td>
+                            <td style="border: 0px !important"></td>
+                            <td align="right">Total de usuarios:</td>
                             <td style="font-weight: bold;">@TOTAL</td>
                         </tr>
                     </tbody>

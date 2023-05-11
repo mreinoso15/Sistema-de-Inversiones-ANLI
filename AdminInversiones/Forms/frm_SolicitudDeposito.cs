@@ -28,7 +28,8 @@ namespace AdminInversiones
         {
             //LLENAR LA TABLA CON LOS VALORES DE LA BASE DE DATOS
             conexion = new ConexionBD();
-            dataGridView1.DataSource = conexion.obtenerSolicitudesDeposito();            
+            dataGridView1.DataSource = conexion.obtenerSolicitudesDeposito();
+            dataGridView1.Columns.Cast<DataGridViewColumn>().ToList().ForEach(f => f.SortMode = DataGridViewColumnSortMode.NotSortable);
         }
 
         private void btn_Aceptar_Click(object sender, EventArgs e)
@@ -56,11 +57,12 @@ namespace AdminInversiones
             {
                 System.Diagnostics.Process.Start(URLS);
             }
-            catch (WebException ex)
+            catch (InvalidOperationException error)
             {
-                MessageBox.Show(ex.Message);
-                MessageBox.Show("No se pudo abrir la imagen");
+                MessageBox.Show(error.Message);
+                MessageBox.Show("No hay URL para abrir");
             }
+            
         }
 
         private void btn_Rechazar_Click(object sender, EventArgs e)

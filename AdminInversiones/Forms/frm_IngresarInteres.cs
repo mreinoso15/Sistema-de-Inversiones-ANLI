@@ -31,17 +31,18 @@ namespace AdminInversiones
             cmb_tasas = conexion.obtenerTasasInversiones(cmb_tasas);
             cmb_tasasAsignar = conexion.obtenerTasasInversiones(cmb_tasasAsignar);
             cmb_tasasEliminar = conexion.obtenerTasasInversiones(cmb_tasasEliminar);
+            dataGridView1.Columns.Cast<DataGridViewColumn>().ToList().ForEach(f => f.SortMode = DataGridViewColumnSortMode.NotSortable);
         }
 
         private void btn_ingresarTasa_Click(object sender, EventArgs e)
         {
-            if (validarCampos() == false) MessageBox.Show("Faltan datos por llenar, revisa de nuevo los campos");
+            if (validarCampos() == false) MessageBox.Show("Faltan datos por llenar, revisa de nuevo los campos","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             else {
                 double tasa = Double.Parse(txt_valorTasa.Value.ToString());
                 string tipo = txt_tipoTasa.Text;
                 string descripcion = txt_descripcion.Text;
                 conexion.insertarTasaInteres(tasa, tipo, descripcion);
-                MessageBox.Show("Datos insertados");
+                MessageBox.Show("Los datos fueron insertados","Intereses",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 limpiarCamposInsertar();
                 cmb_tasas = conexion.obtenerTasasInversiones(cmb_tasas);
                 cmb_tasasAsignar = conexion.obtenerTasasInversiones(cmb_tasasAsignar);

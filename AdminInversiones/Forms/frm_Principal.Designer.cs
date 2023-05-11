@@ -30,8 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Principal));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btn_Usuarios = new System.Windows.Forms.Button();
             this.pnlSubMenu = new System.Windows.Forms.Panel();
-            this.btnCalcularIntereses = new System.Windows.Forms.Button();
+            this.btnCalcularImpuestos = new System.Windows.Forms.Button();
             this.btnActulizarInteres = new System.Windows.Forms.Button();
             this.btn_CerrarSesion = new System.Windows.Forms.Button();
             this.btn_Interes = new System.Windows.Forms.Button();
@@ -52,6 +53,7 @@
             // 
             this.panelMenu.AutoScroll = true;
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelMenu.Controls.Add(this.btn_Usuarios);
             this.panelMenu.Controls.Add(this.pnlSubMenu);
             this.panelMenu.Controls.Add(this.btn_CerrarSesion);
             this.panelMenu.Controls.Add(this.btn_Interes);
@@ -67,31 +69,50 @@
             this.panelMenu.Size = new System.Drawing.Size(338, 1020);
             this.panelMenu.TabIndex = 1;
             // 
+            // btn_Usuarios
+            // 
+            this.btn_Usuarios.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Usuarios.FlatAppearance.BorderSize = 0;
+            this.btn_Usuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Usuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Usuarios.ForeColor = System.Drawing.Color.GhostWhite;
+            this.btn_Usuarios.Image = global::AdminInversiones.Properties.Resources.profile;
+            this.btn_Usuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Usuarios.Location = new System.Drawing.Point(0, 820);
+            this.btn_Usuarios.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_Usuarios.Name = "btn_Usuarios";
+            this.btn_Usuarios.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btn_Usuarios.Size = new System.Drawing.Size(312, 106);
+            this.btn_Usuarios.TabIndex = 14;
+            this.btn_Usuarios.Text = "Usuarios";
+            this.btn_Usuarios.UseVisualStyleBackColor = true;
+            this.btn_Usuarios.Click += new System.EventHandler(this.btn_Usuarios_Click);
+            // 
             // pnlSubMenu
             // 
             this.pnlSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.pnlSubMenu.Controls.Add(this.btnCalcularIntereses);
+            this.pnlSubMenu.Controls.Add(this.btnCalcularImpuestos);
             this.pnlSubMenu.Controls.Add(this.btnActulizarInteres);
             this.pnlSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSubMenu.Location = new System.Drawing.Point(0, 705);
             this.pnlSubMenu.Name = "pnlSubMenu";
-            this.pnlSubMenu.Size = new System.Drawing.Size(338, 115);
+            this.pnlSubMenu.Size = new System.Drawing.Size(312, 115);
             this.pnlSubMenu.TabIndex = 13;
             // 
-            // btnCalcularIntereses
+            // btnCalcularImpuestos
             // 
-            this.btnCalcularIntereses.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCalcularIntereses.FlatAppearance.BorderSize = 0;
-            this.btnCalcularIntereses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalcularIntereses.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
-            this.btnCalcularIntereses.ForeColor = System.Drawing.Color.White;
-            this.btnCalcularIntereses.Location = new System.Drawing.Point(0, 54);
-            this.btnCalcularIntereses.Name = "btnCalcularIntereses";
-            this.btnCalcularIntereses.Size = new System.Drawing.Size(338, 54);
-            this.btnCalcularIntereses.TabIndex = 1;
-            this.btnCalcularIntereses.Text = "Calcular Interes Mensual";
-            this.btnCalcularIntereses.UseVisualStyleBackColor = true;
-            this.btnCalcularIntereses.Click += new System.EventHandler(this.btnCalcularIntereses_Click);
+            this.btnCalcularImpuestos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCalcularImpuestos.FlatAppearance.BorderSize = 0;
+            this.btnCalcularImpuestos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalcularImpuestos.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.btnCalcularImpuestos.ForeColor = System.Drawing.Color.White;
+            this.btnCalcularImpuestos.Location = new System.Drawing.Point(0, 54);
+            this.btnCalcularImpuestos.Name = "btnCalcularImpuestos";
+            this.btnCalcularImpuestos.Size = new System.Drawing.Size(312, 54);
+            this.btnCalcularImpuestos.TabIndex = 1;
+            this.btnCalcularImpuestos.Text = "Calcular Impuestos Mensuales";
+            this.btnCalcularImpuestos.UseVisualStyleBackColor = true;
+            this.btnCalcularImpuestos.Click += new System.EventHandler(this.btnCalcularIntereses_Click);
             // 
             // btnActulizarInteres
             // 
@@ -102,7 +123,7 @@
             this.btnActulizarInteres.ForeColor = System.Drawing.Color.White;
             this.btnActulizarInteres.Location = new System.Drawing.Point(0, 0);
             this.btnActulizarInteres.Name = "btnActulizarInteres";
-            this.btnActulizarInteres.Size = new System.Drawing.Size(338, 54);
+            this.btnActulizarInteres.Size = new System.Drawing.Size(312, 54);
             this.btnActulizarInteres.TabIndex = 0;
             this.btnActulizarInteres.Text = "Actualizar Tasas de Interes";
             this.btnActulizarInteres.UseVisualStyleBackColor = true;
@@ -118,11 +139,11 @@
             this.btn_CerrarSesion.ForeColor = System.Drawing.Color.GhostWhite;
             this.btn_CerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btn_CerrarSesion.Image")));
             this.btn_CerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_CerrarSesion.Location = new System.Drawing.Point(0, 914);
+            this.btn_CerrarSesion.Location = new System.Drawing.Point(0, 926);
             this.btn_CerrarSesion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_CerrarSesion.Name = "btn_CerrarSesion";
             this.btn_CerrarSesion.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btn_CerrarSesion.Size = new System.Drawing.Size(338, 106);
+            this.btn_CerrarSesion.Size = new System.Drawing.Size(312, 106);
             this.btn_CerrarSesion.TabIndex = 12;
             this.btn_CerrarSesion.Text = "Cerrar Sesión";
             this.btn_CerrarSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -142,9 +163,9 @@
             this.btn_Interes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Interes.Name = "btn_Interes";
             this.btn_Interes.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btn_Interes.Size = new System.Drawing.Size(338, 106);
+            this.btn_Interes.Size = new System.Drawing.Size(312, 106);
             this.btn_Interes.TabIndex = 10;
-            this.btn_Interes.Text = "Intereses";
+            this.btn_Interes.Text = "Intereses e Impuestos";
             this.btn_Interes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Interes.UseVisualStyleBackColor = true;
             this.btn_Interes.Click += new System.EventHandler(this.btn_Interes_Click_1);
@@ -162,7 +183,7 @@
             this.btn_Retiros.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Retiros.Name = "btn_Retiros";
             this.btn_Retiros.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btn_Retiros.Size = new System.Drawing.Size(338, 106);
+            this.btn_Retiros.Size = new System.Drawing.Size(312, 106);
             this.btn_Retiros.TabIndex = 9;
             this.btn_Retiros.Text = "Solicitudes de Retiro";
             this.btn_Retiros.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -182,7 +203,7 @@
             this.btn_Depositos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Depositos.Name = "btn_Depositos";
             this.btn_Depositos.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btn_Depositos.Size = new System.Drawing.Size(338, 106);
+            this.btn_Depositos.Size = new System.Drawing.Size(312, 106);
             this.btn_Depositos.TabIndex = 8;
             this.btn_Depositos.Text = "Solicitudes de Deposito";
             this.btn_Depositos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -202,7 +223,7 @@
             this.btn_Reportes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Reportes.Name = "btn_Reportes";
             this.btn_Reportes.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btn_Reportes.Size = new System.Drawing.Size(338, 106);
+            this.btn_Reportes.Size = new System.Drawing.Size(312, 106);
             this.btn_Reportes.TabIndex = 7;
             this.btn_Reportes.Text = "Generar Reportes";
             this.btn_Reportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -222,7 +243,7 @@
             this.btn_Registros.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Registros.Name = "btn_Registros";
             this.btn_Registros.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btn_Registros.Size = new System.Drawing.Size(338, 106);
+            this.btn_Registros.Size = new System.Drawing.Size(312, 106);
             this.btn_Registros.TabIndex = 6;
             this.btn_Registros.Text = "Solicitudes de Registro al Sistema";
             this.btn_Registros.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -238,7 +259,7 @@
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(338, 175);
+            this.panelLogo.Size = new System.Drawing.Size(312, 175);
             this.panelLogo.TabIndex = 5;
             // 
             // panelTitleBar
@@ -286,7 +307,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frm_Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Principal";
+            this.Text = "Sistema De Administracion ANLI";
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
             this.pnlSubMenu.ResumeLayout(false);
@@ -309,8 +330,9 @@
         private System.Windows.Forms.Label lblTitleBar;
         private System.Windows.Forms.Panel panelForms;
         private System.Windows.Forms.Panel pnlSubMenu;
-        private System.Windows.Forms.Button btnCalcularIntereses;
+        private System.Windows.Forms.Button btnCalcularImpuestos;
         private System.Windows.Forms.Button btnActulizarInteres;
+        private System.Windows.Forms.Button btn_Usuarios;
     }
 }
 

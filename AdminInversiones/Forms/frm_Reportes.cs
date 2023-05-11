@@ -33,6 +33,7 @@ namespace AdminInversiones
             generarReporte();
             
             SaveFileDialog savefile = new SaveFileDialog();
+            savefile.Filter = "Archivos PDF(*.pdf)|*.pdf";
             savefile.FileName = string.Format("{0}.pdf", cmb_Socios.SelectedValue.ToString() + " " + DateTime.Now.ToString("dd-MM-yyyy"));
 
             if (savefile.ShowDialog() == DialogResult.OK)

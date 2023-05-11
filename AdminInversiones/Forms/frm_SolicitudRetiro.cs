@@ -25,6 +25,7 @@ namespace AdminInversiones
         {
             conexion = new ConexionBD();
             dataGridView1.DataSource = conexion.obtenerSolicitudesRetiro();
+            dataGridView1.Columns.Cast<DataGridViewColumn>().ToList().ForEach(f => f.SortMode = DataGridViewColumnSortMode.NotSortable);
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -35,20 +36,21 @@ namespace AdminInversiones
 
         private void btn_Aprobar_Click(object sender, EventArgs e)
         {
-
-            DialogResult result = MessageBox.Show($"Esta seguro que quiere retirar: \n {txtCantidadRetiro.Value}",
+            
+                DialogResult result = MessageBox.Show($"Esta seguro que quiere retirar: \n {txtCantidadRetiro.Value}",
                                                     "Advertencia",
                                                     MessageBoxButtons.YesNo,
                                                     MessageBoxIcon.Warning,
                                                     MessageBoxDefaultButton.Button2);
 
-            double total = conexion.obtenerTotal(idUsuario);
-            if (total >= Decimal.ToDouble(txtCantidadRetiro.Value))
-            {
-                switch (result)
+                double total = conexion.obtenerTotal(idUsuario);
+                MessageBox.Show("El total del usuario es:"+total + "");
+                if (total >= Decimal.ToDouble(txtCantidadRetiro.Value))
                 {
-                    case DialogResult.Yes:
-                        if (dataGridView1.CurrentRow.Selected == true)
+                    switch (result)
+                    {
+                        case DialogResult.Yes:
+                        try
                         {
                             cantidadRetiro = Decimal.ToDouble(txtCantidadRetiro.Value);
                             codigoBoton();
@@ -56,21 +58,20 @@ namespace AdminInversiones
                             dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
                             MessageBox.Show("La solicitud ha sido aceptada", "Retiros");
                         }
-                        else
+                        catch (Exception ex)
                         {
                             MessageBox.Show("Favor de seleccionar una fila ", "Retiros");
-                        }
-                        break;
+                        }                      
+                            break;
 
-                    case DialogResult.No:
-                        return;
+                        case DialogResult.No:
+                            return;
+                    }
                 }
-            }
-            else
-            {
-                MessageBox.Show("No tiene los fondos necesarios para realizar su retiro","Retiros",MessageBoxButtons.OK,MessageBoxIcon.Error);
-            }
-            
+                else
+                {
+                    MessageBox.Show("No tiene los fondos necesarios para realizar su retiro", "Retiros", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }  
         }
 
         private void btn_Rechazar_Click(object sender, EventArgs e)

@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlTypes;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static iText.StyledXmlParser.Jsoup.Select.Evaluator;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace AdminInversiones
@@ -197,6 +198,67 @@ namespace AdminInversiones
                 return null;
             }
         }   //POR MODIFICAR, PUEDE QUE NO SEA NECESARIO
+        public DataTable obtenerUsuarios()
+        {
+            //SE DECLARA A QUE BASE DE DATOS SE CONECTARA
+            using (conn1)
+            {
+                //SE DECLARA EL COMANDO SQL QUE SE DESEA EJECUTAR 
+                string query = "SELECT id_usuario AS 'No. Socio', " +
+                                       "nombre_usuario AS 'Nombre de usuario', " +
+                                       "fecha_registro AS 'Fecha de Registro', " +
+                                       "cantidad_ahorro + cantidad_inversion AS 'Total', " +
+                                       "IF(estatus_usuario = 1,\"ACTIVO\",\"BAJA\") AS 'ESTATUS'" +
+                               "from usuario ORDER BY estatus_usuario ASC;;";
+                //SE DECLARA LA TABLA DONDE SE VACIAN LOS DATOS QUE REGRESA LA QUERY SQL
+                DataTable dataTable = new DataTable();
+
+                try
+                {
+                    //SE ABRE LA CONEXION CON LA BASE DE DATOS
+                    conn1.Open();
+                    //SE DECLARA EL LECTOR DE DATOS DE LA BASE DE DATOS SQL
+                    MySqlDataReader reader = null;
+                    //SE LE ASIGNA LA INFORMACION QUE REGRESO EL COMANDO SQL
+                    MySqlCommand cmd = new MySqlCommand(query, conn1);
+                    reader = cmd.ExecuteReader();
+                    //SE LLENA LA TABLA PARA PODER MOSTRAR LA INFORMACION AL USUARIO
+                    dataTable.Load(reader);
+                    return dataTable;
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                return null;
+            }
+        }
+        public void bajaUsuarios(int idUsuario)
+        {
+            using (conn1)
+            {
+                //SE DECLARA EL COMANDO SQL QUE SE DESEA EJECUTAR 
+                string query = "UPDATE `usuario` " +
+                               "SET `estatus_usuario` = 2 " +
+                               "WHERE `id_usuario` = " + idUsuario + ";";
+                try
+                {
+                    //SE ABRE LA CONEXION CON LA BASE DE DATOS
+                    conn1.Open();
+                    //SE LE ASIGNA LA INFORMACION QUE REGRESO EL COMANDO SQL
+                    MySqlCommand cmd = new MySqlCommand(query, conn1);
+                    //SE EJECUTA EL COMANDO
+                    cmd.ExecuteNonQuery();
+                    //SE LLENA LA TABLA PARA PODER MOSTRAR LA INFORMACION AL USUARIO
+
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+        }
         public void aceptarSolicitudRegistro(int id)
         {
             using (conn1)
@@ -223,6 +285,51 @@ namespace AdminInversiones
                 
             }
         } //MODIFICADO2
+        public void insertarImpuestosRegistro(int id,double cantidad)
+        {
+            using (conn1)
+            {
+                //SE DECLARA EL COMANDO SQL QUE SE DESEA EJECUTAR 
+                string query = $"UPDATE usuario SET impuesto_interes = {cantidad} WHERE id_usuario = {id};";
+                try
+                {
+                    //SE ABRE LA CONEXION CON LA BASE DE DATOS
+                    conn1.Open();
+                    //SE EJECUTA EL COMANDO
+                    MySqlCommand cmd = new MySqlCommand(query, conn1);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }//USING
+        }
+        public double obtenerImpuestos()
+        {
+            using (conn1)
+            {
+                try
+                {
+                    //QUERY QUE SE VA A EJECUTAR
+                    string query = $"SELECT impuesto_interes FROM usuario ORDER BY id_usuario DESC LIMIT 1;";
+                    //SE PREPARA EL COMANDO SQL CON EL QUERY Y LA CONEXION
+                    MySqlCommand cmd = new MySqlCommand(query, conn1);
+                    conn1.Open();
+                    //SE EJECUTA EL COMANDO
+                    var obj = cmd.ExecuteScalar();
+                    //SE VERIFICA QUE EXISTA EL NOMBRE DE USUARIO (El valor que regresa el query es 0 si no existe, 1 si existe)
+                    double total = Convert.ToDouble(obj);
+                    return total;
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                return 0;
+            }//USING  
+        }
         public void aceptarSolicitudDeposito(int id, string folio)
         {
             using (conn1)
@@ -297,7 +404,7 @@ namespace AdminInversiones
             {
                 //SE DECLARA EL COMANDO SQL QUE SE DESEA EJECUTAR 
                 string query = "UPDATE `solicitudes_deposito` " +
-                              "SET `estado_deposito` = 4 " +
+                              "SET `estado_deposito` = 2 " +
                               "WHERE `id_solicitud` = " + id + ";";
                 try
                 {
@@ -447,6 +554,30 @@ namespace AdminInversiones
             }//USING        
             
         }
+        public double calcularTotalImpuestos(string fechaCalcular)
+        {
+            using (conn1)
+            {
+                try
+                {
+                    //QUERY QUE SE VA A EJECUTAR
+                    string query = $"SELECT SUM(cantidad_pagar) FROM impuestos_intereses WHERE MONTH(fecha_impuesto) = MONTH('{fechaCalcular}');";
+                    //SE PREPARA EL COMANDO SQL CON EL QUERY Y LA CONEXION
+                    MySqlCommand cmd = new MySqlCommand(query, conn1);
+                    conn1.Open();
+                    //SE EJECUTA EL COMANDO
+                    var obj = cmd.ExecuteScalar();
+                    //SE VERIFICA QUE EXISTA EL NOMBRE DE USUARIO (El valor que regresa el query es 0 si no existe, 1 si existe)
+                    double total = Convert.ToDouble(obj);
+                    return Math.Round(total,2);
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                return 0;
+            }//USING  
+        }
         public void nuevoTotal(int idUsuario)
         {
             using (conn1)
@@ -532,7 +663,7 @@ namespace AdminInversiones
                 }
             }//USING
         } //MODIFICADO2
-        public List<Retiros> obtenerDataReportes(List <Retiros> reporte,string fechaIni, string fechaFin, int userID)
+        public List<Retiros> obtenerDataReportes(List<Retiros> reporte,string fechaIni, string fechaFin, int userID)
         {
             using (conn1)
             {
@@ -566,6 +697,38 @@ namespace AdminInversiones
                     return null;
                 }
             }//USING
+        }
+        public List<Impuestos> obtenerTablaImpuestos(List<Impuestos> impuesto, string fechaImpuestos)
+        {
+            using (conn1)
+            {
+                try
+                {
+                    //QUERY QUE SE VA A EJECUTAR
+                    string query = "SELECT i.id_usuario AS 'Id'," +
+                                           "u.nombre_usuario AS 'Nombre'," +
+                                           "i.fecha_impuesto AS 'Fecha'," +
+                                           "i.cantidad_pagar AS 'Cantidad' " +
+                                   "FROM impuestos_intereses AS i " +
+                                   "INNER JOIN usuario AS u ON i.id_usuario = u.id_usuario " +
+                                   $"WHERE MONTH(fecha_impuesto) = MONTH('{fechaImpuestos}') ORDER BY i.id_usuario ASC;";
+                    //SE PREPARA EL COMANDO SQL CON EL QUERY Y LA CONEXION
+                    MySqlCommand cmd = new MySqlCommand(query, conn1);
+                    conn1.Open();
+                    //SE EJECUTA EL COMANDO
+                    var dataReader = cmd.ExecuteReader();
+                    //SE LLENA LA LISTA CON LOS DATOS NECESARIOS PARA GENERAR LOS REPORTES 
+                    impuesto = llenarLista<Impuestos>(dataReader);
+                    return impuesto;
+
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return null;
+                }
+            }//USING
+
         }
         /*public Tasa obtenerDataTasa(int id)
         {

@@ -47,6 +47,7 @@ namespace AdminInversiones
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(960, 727);
@@ -85,8 +86,12 @@ namespace AdminInversiones
             0,
             0,
             65536});
-            this.txtCantidadRetiro.Maximum = Decimal.MaxValue;
             this.txtCantidadRetiro.Location = new System.Drawing.Point(1003, 76);
+            this.txtCantidadRetiro.Maximum = new decimal(new int[] {
+            -1,
+            -1,
+            -1,
+            0});
             this.txtCantidadRetiro.Name = "txtCantidadRetiro";
             this.txtCantidadRetiro.Size = new System.Drawing.Size(230, 26);
             this.txtCantidadRetiro.TabIndex = 15;

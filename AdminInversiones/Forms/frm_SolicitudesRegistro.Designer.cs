@@ -52,9 +52,11 @@
             // 
             // btn_AceptarSolicitud
             // 
+            this.btn_AceptarSolicitud.Image = global::AdminInversiones.Properties.Resources._checked;
+            this.btn_AceptarSolicitud.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_AceptarSolicitud.Location = new System.Drawing.Point(1046, 12);
             this.btn_AceptarSolicitud.Name = "btn_AceptarSolicitud";
-            this.btn_AceptarSolicitud.Size = new System.Drawing.Size(230, 97);
+            this.btn_AceptarSolicitud.Size = new System.Drawing.Size(272, 97);
             this.btn_AceptarSolicitud.TabIndex = 2;
             this.btn_AceptarSolicitud.Text = "Aceptar Solicitud";
             this.btn_AceptarSolicitud.UseVisualStyleBackColor = true;
@@ -62,9 +64,11 @@
             // 
             // btn_RechazarSolicitud
             // 
+            this.btn_RechazarSolicitud.Image = global::AdminInversiones.Properties.Resources.remove;
+            this.btn_RechazarSolicitud.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_RechazarSolicitud.Location = new System.Drawing.Point(1046, 135);
             this.btn_RechazarSolicitud.Name = "btn_RechazarSolicitud";
-            this.btn_RechazarSolicitud.Size = new System.Drawing.Size(230, 97);
+            this.btn_RechazarSolicitud.Size = new System.Drawing.Size(272, 97);
             this.btn_RechazarSolicitud.TabIndex = 3;
             this.btn_RechazarSolicitud.Text = "Rechazar Solicitud";
             this.btn_RechazarSolicitud.UseVisualStyleBackColor = true;
