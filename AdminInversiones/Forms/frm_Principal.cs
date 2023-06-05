@@ -80,7 +80,7 @@ namespace AdminInversiones
         {
             hideSubMenu();
             OpenChildForm(new frm_CalcularImpuestos(), sender);
-            lblTitleBar.Text = "Calculo de impuestos Mensuales";
+            lblTitleBar.Text = "Calculo de impuestos mensuales";
         }
 
         //Metodos Diseno

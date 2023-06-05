@@ -32,26 +32,27 @@ namespace AdminInversiones.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Login));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.picLogo = new System.Windows.Forms.PictureBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtUser = new System.Windows.Forms.TextBox();
+            this.picUser = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.btnLogin = new System.Windows.Forms.Button();
             this.picPassword = new System.Windows.Forms.PictureBox();
-            this.picUser = new System.Windows.Forms.PictureBox();
-            this.picLogo = new System.Windows.Forms.PictureBox();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picUser)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPassword)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picUser)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -100,6 +101,18 @@ namespace AdminInversiones.Forms
             this.label1.TabIndex = 1;
             this.label1.Text = "Bienvenido al";
             // 
+            // picLogo
+            // 
+            this.picLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(104)))), ((int)(((byte)(10)))));
+            this.picLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.picLogo.Image = global::AdminInversiones.Properties.Resources.ANLI_LOGO;
+            this.picLogo.Location = new System.Drawing.Point(0, 0);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(400, 172);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogo.TabIndex = 0;
+            this.picLogo.TabStop = false;
+            // 
             // btnExit
             // 
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -145,6 +158,15 @@ namespace AdminInversiones.Forms
             this.txtUser.Size = new System.Drawing.Size(320, 30);
             this.txtUser.TabIndex = 1;
             // 
+            // picUser
+            // 
+            this.picUser.Image = global::AdminInversiones.Properties.Resources.user;
+            this.picUser.Location = new System.Drawing.Point(10, 10);
+            this.picUser.Name = "picUser";
+            this.picUser.Size = new System.Drawing.Size(40, 40);
+            this.picUser.TabIndex = 0;
+            this.picUser.TabStop = false;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
@@ -165,6 +187,15 @@ namespace AdminInversiones.Forms
             this.txtPassword.TabIndex = 2;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
+            // picPassword
+            // 
+            this.picPassword.Image = global::AdminInversiones.Properties.Resources._lock;
+            this.picPassword.Location = new System.Drawing.Point(10, 10);
+            this.picPassword.Name = "picPassword";
+            this.picPassword.Size = new System.Drawing.Size(40, 40);
+            this.picPassword.TabIndex = 1;
+            this.picPassword.TabStop = false;
+            // 
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(104)))), ((int)(((byte)(10)))));
@@ -179,36 +210,6 @@ namespace AdminInversiones.Forms
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // picPassword
-            // 
-            this.picPassword.Image = global::AdminInversiones.Properties.Resources._lock;
-            this.picPassword.Location = new System.Drawing.Point(10, 10);
-            this.picPassword.Name = "picPassword";
-            this.picPassword.Size = new System.Drawing.Size(40, 40);
-            this.picPassword.TabIndex = 1;
-            this.picPassword.TabStop = false;
-            // 
-            // picUser
-            // 
-            this.picUser.Image = global::AdminInversiones.Properties.Resources.user;
-            this.picUser.Location = new System.Drawing.Point(10, 10);
-            this.picUser.Name = "picUser";
-            this.picUser.Size = new System.Drawing.Size(40, 40);
-            this.picUser.TabIndex = 0;
-            this.picUser.TabStop = false;
-            // 
-            // picLogo
-            // 
-            this.picLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(104)))), ((int)(((byte)(10)))));
-            this.picLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.picLogo.Image = global::AdminInversiones.Properties.Resources.ANLI_LOGO;
-            this.picLogo.Location = new System.Drawing.Point(0, 0);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(400, 172);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picLogo.TabIndex = 0;
-            this.picLogo.TabStop = false;
-            // 
             // frm_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -222,18 +223,19 @@ namespace AdminInversiones.Forms
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picUser)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPassword)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picUser)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

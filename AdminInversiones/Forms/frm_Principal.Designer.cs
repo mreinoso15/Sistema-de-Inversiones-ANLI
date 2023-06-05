@@ -44,9 +44,12 @@
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.lblTitleBar = new System.Windows.Forms.Label();
             this.panelForms = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMenu.SuspendLayout();
             this.pnlSubMenu.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
+            this.panelForms.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -277,22 +280,35 @@
             // 
             this.lblTitleBar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTitleBar.AutoSize = true;
-            this.lblTitleBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleBar.Font = new System.Drawing.Font("Times New Roman", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitleBar.ForeColor = System.Drawing.Color.GhostWhite;
-            this.lblTitleBar.Location = new System.Drawing.Point(550, 72);
+            this.lblTitleBar.Location = new System.Drawing.Point(325, 56);
             this.lblTitleBar.Name = "lblTitleBar";
-            this.lblTitleBar.Size = new System.Drawing.Size(582, 32);
+            this.lblTitleBar.Size = new System.Drawing.Size(1032, 63);
             this.lblTitleBar.TabIndex = 0;
             this.lblTitleBar.Text = "Sistema de Administracion de Inversiones";
+            this.lblTitleBar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelForms
             // 
             this.panelForms.BackColor = System.Drawing.Color.White;
+            this.panelForms.Controls.Add(this.pictureBox1);
             this.panelForms.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelForms.Location = new System.Drawing.Point(338, 175);
             this.panelForms.Name = "panelForms";
             this.panelForms.Size = new System.Drawing.Size(1556, 845);
             this.panelForms.TabIndex = 4;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::AdminInversiones.Properties.Resources.Which_Type_of_Investment_Has_the_Highest_Risk_1400x826;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1556, 845);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // frm_Principal
             // 
@@ -304,6 +320,7 @@
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frm_Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -313,6 +330,8 @@
             this.pnlSubMenu.ResumeLayout(false);
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
+            this.panelForms.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -333,6 +352,7 @@
         private System.Windows.Forms.Button btnCalcularImpuestos;
         private System.Windows.Forms.Button btnActulizarInteres;
         private System.Windows.Forms.Button btn_Usuarios;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

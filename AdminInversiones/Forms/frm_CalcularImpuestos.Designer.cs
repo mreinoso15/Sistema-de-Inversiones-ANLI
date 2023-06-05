@@ -72,9 +72,11 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.BackColor = System.Drawing.Color.White;
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Image = global::AdminInversiones.Properties.Resources.loupe;
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.Image = global::AdminInversiones.Properties.Resources.search;
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBuscar.Location = new System.Drawing.Point(1002, 91);
             this.btnBuscar.Name = "btnBuscar";
@@ -107,7 +109,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(997, 278);
+            this.label1.Location = new System.Drawing.Point(997, 254);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(257, 25);
             this.label1.TabIndex = 6;
@@ -115,16 +117,19 @@
             // 
             // btnGenerarDoc
             // 
+            this.btnGenerarDoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.btnGenerarDoc.Enabled = false;
+            this.btnGenerarDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerarDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerarDoc.Image = global::AdminInversiones.Properties.Resources.document;
+            this.btnGenerarDoc.ForeColor = System.Drawing.Color.White;
+            this.btnGenerarDoc.Image = global::AdminInversiones.Properties.Resources.pdf;
             this.btnGenerarDoc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGenerarDoc.Location = new System.Drawing.Point(1002, 306);
+            this.btnGenerarDoc.Location = new System.Drawing.Point(1002, 282);
             this.btnGenerarDoc.Name = "btnGenerarDoc";
             this.btnGenerarDoc.Size = new System.Drawing.Size(240, 55);
             this.btnGenerarDoc.TabIndex = 7;
             this.btnGenerarDoc.Text = "Crear Documento";
-            this.btnGenerarDoc.UseVisualStyleBackColor = true;
+            this.btnGenerarDoc.UseVisualStyleBackColor = false;
             this.btnGenerarDoc.Click += new System.EventHandler(this.btnGenerarDoc_Click);
             // 
             // frm_CalcularImpuestos

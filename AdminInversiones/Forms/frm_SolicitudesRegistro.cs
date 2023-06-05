@@ -28,17 +28,22 @@ namespace AdminInversiones
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            idSolicitud = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["ID SOLICITUD"].Value.ToString());
-            idUsuario = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["ID USUARIO"].Value.ToString());
+            try
+            {
+                idSolicitud = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["ID SOLICITUD"].Value.ToString());
+                idUsuario = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["ID USUARIO"].Value.ToString());
+            }
+            catch(ArgumentOutOfRangeException ex)
+            {
+                MessageBox.Show("Selecciona una fila por favor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btn_AceptarSolicitud_Click(object sender, EventArgs e)
         {
             if (dataGridView1.CurrentRow.Selected == true)
             {
-                double impuesto = conexion.obtenerImpuestos();
                 conexion.aceptarSolicitudRegistro(idSolicitud);
-                conexion.insertarImpuestosRegistro(idUsuario, impuesto);
                 dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
                 MessageBox.Show("La solicitud ha sido aceptada","Registro de usuarios",MessageBoxButtons.OK,MessageBoxIcon.Information);
 

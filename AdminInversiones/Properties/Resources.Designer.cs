@@ -83,6 +83,16 @@ namespace AdminInversiones.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap a78e6218_4f07_4c6c_b9e5_3bc7a0b743ea {
+            get {
+                object obj = ResourceManager.GetObject("a78e6218-4f07-4c6c-b9e5-3bc7a0b743ea", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ANLI_LOGO {
             get {
                 object obj = ResourceManager.GetObject("ANLI LOGO", resourceCulture);
@@ -121,6 +131,16 @@ namespace AdminInversiones.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pdf {
+            get {
+                object obj = ResourceManager.GetObject("pdf", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
         ///&lt;html lang=&quot;en&quot;&gt;
         ///&lt;head&gt;
@@ -151,6 +171,34 @@ namespace AdminInversiones.Properties {
         /// <summary>
         ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
         ///&lt;html lang=&quot;en&quot;&gt;
+        ///&lt;head&gt;
+        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
+        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+        ///    &lt;title&gt;Document&lt;/title&gt;
+        ///    &lt;style&gt;
+        ///        table.border {
+        ///            border-collapse: collapse;
+        ///        }
+        ///
+        ///        table.border th {
+        ///            padding: 5px;
+        ///            border: 1px solid black;
+        ///        }
+        ///
+        ///        table.border td {
+        ///            padding: 5px;
+        ///            border: 1px soli [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string plantilla_general {
+            get {
+                return ResourceManager.GetString("plantilla_general", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
         ///
         ///&lt;head&gt;
         ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
@@ -174,6 +222,35 @@ namespace AdminInversiones.Properties {
         internal static string plantilla_impuestos {
             get {
                 return ResourceManager.GetString("plantilla_impuestos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
+        ///
+        ///&lt;head&gt;
+        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
+        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+        ///    &lt;title&gt;Document&lt;/title&gt;
+        ///    &lt;style&gt;
+        ///        table.border {
+        ///            border-collapse: collapse;
+        ///        }
+        ///
+        ///        table.border th {
+        ///            padding: 5px;
+        ///            border: 1px solid black;
+        ///        }
+        ///
+        ///        table.border td {
+        ///            padding: 5px;
+        ///            border: 1px so [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string plantilla_impuestos_usuario {
+            get {
+                return ResourceManager.GetString("plantilla_impuestos_usuario", resourceCulture);
             }
         }
         
@@ -228,6 +305,16 @@ namespace AdminInversiones.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap search {
+            get {
+                object obj = ResourceManager.GetObject("search", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap unsubscribe {
             get {
                 object obj = ResourceManager.GetObject("unsubscribe", resourceCulture);
@@ -241,6 +328,16 @@ namespace AdminInversiones.Properties {
         internal static System.Drawing.Bitmap user {
             get {
                 object obj = ResourceManager.GetObject("user", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Which_Type_of_Investment_Has_the_Highest_Risk_1400x826 {
+            get {
+                object obj = ResourceManager.GetObject("Which-Type-of-Investment-Has-the-Highest-Risk-1400x826", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

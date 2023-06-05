@@ -38,24 +38,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.grpActualizar = new System.Windows.Forms.GroupBox();
             this.txt_valorActualizar = new System.Windows.Forms.NumericUpDown();
-            this.txt_descripcionActualizar = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txt_actualizarTipo = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.btn_aceptar = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.cmb_tasas = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.grpAsignarTasas = new System.Windows.Forms.GroupBox();
-            this.btn_asignar = new System.Windows.Forms.Button();
-            this.cmb_tasasAsignar = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.grpEliminar = new System.Windows.Forms.GroupBox();
-            this.btn_eliminar = new System.Windows.Forms.Button();
-            this.cmb_tasasEliminar = new System.Windows.Forms.ComboBox();
+            this.txtActualizarImpuestos = new System.Windows.Forms.NumericUpDown();
+            this.btn_ActualizarImpuesto = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.chkActualizar = new System.Windows.Forms.CheckBox();
+            this.btnGenerarExcel = new System.Windows.Forms.Button();
             this.grp_formularioInteres.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_valorTasa)).BeginInit();
             this.grpActualizar.SuspendLayout();
@@ -63,6 +56,7 @@
             this.grpAsignarTasas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grpEliminar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtActualizarImpuestos)).BeginInit();
             this.SuspendLayout();
             // 
             // grp_formularioInteres
@@ -97,9 +91,11 @@
             // 
             // btn_ingresarTasa
             // 
-            this.btn_ingresarTasa.Location = new System.Drawing.Point(289, 226);
+            this.btn_ingresarTasa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ingresarTasa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ingresarTasa.Location = new System.Drawing.Point(273, 226);
             this.btn_ingresarTasa.Name = "btn_ingresarTasa";
-            this.btn_ingresarTasa.Size = new System.Drawing.Size(92, 43);
+            this.btn_ingresarTasa.Size = new System.Drawing.Size(108, 43);
             this.btn_ingresarTasa.TabIndex = 8;
             this.btn_ingresarTasa.Text = "Ingresar";
             this.btn_ingresarTasa.UseVisualStyleBackColor = true;
@@ -149,19 +145,14 @@
             // 
             // grpActualizar
             // 
-            this.grpActualizar.Controls.Add(this.chkActualizar);
             this.grpActualizar.Controls.Add(this.txt_valorActualizar);
-            this.grpActualizar.Controls.Add(this.txt_descripcionActualizar);
-            this.grpActualizar.Controls.Add(this.label11);
-            this.grpActualizar.Controls.Add(this.txt_actualizarTipo);
-            this.grpActualizar.Controls.Add(this.label10);
             this.grpActualizar.Controls.Add(this.btn_aceptar);
             this.grpActualizar.Controls.Add(this.label7);
             this.grpActualizar.Controls.Add(this.cmb_tasas);
             this.grpActualizar.Controls.Add(this.label6);
             this.grpActualizar.Location = new System.Drawing.Point(12, 308);
             this.grpActualizar.Name = "grpActualizar";
-            this.grpActualizar.Size = new System.Drawing.Size(403, 325);
+            this.grpActualizar.Size = new System.Drawing.Size(403, 174);
             this.grpActualizar.TabIndex = 9;
             this.grpActualizar.TabStop = false;
             this.grpActualizar.Text = "Actualizar tasa:";
@@ -169,68 +160,33 @@
             // txt_valorActualizar
             // 
             this.txt_valorActualizar.DecimalPlaces = 2;
-            this.txt_valorActualizar.Enabled = false;
             this.txt_valorActualizar.Increment = new decimal(new int[] {
             1,
             0,
             0,
             131072});
-            this.txt_valorActualizar.Location = new System.Drawing.Point(191, 112);
+            this.txt_valorActualizar.Location = new System.Drawing.Point(191, 66);
             this.txt_valorActualizar.Name = "txt_valorActualizar";
             this.txt_valorActualizar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txt_valorActualizar.Size = new System.Drawing.Size(190, 26);
             this.txt_valorActualizar.TabIndex = 10;
             // 
-            // txt_descripcionActualizar
-            // 
-            this.txt_descripcionActualizar.Enabled = false;
-            this.txt_descripcionActualizar.Location = new System.Drawing.Point(191, 187);
-            this.txt_descripcionActualizar.Multiline = true;
-            this.txt_descripcionActualizar.Name = "txt_descripcionActualizar";
-            this.txt_descripcionActualizar.Size = new System.Drawing.Size(190, 62);
-            this.txt_descripcionActualizar.TabIndex = 14;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 193);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(167, 20);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "Actualizar descripcion:";
-            // 
-            // txt_actualizarTipo
-            // 
-            this.txt_actualizarTipo.Enabled = false;
-            this.txt_actualizarTipo.Location = new System.Drawing.Point(191, 151);
-            this.txt_actualizarTipo.Name = "txt_actualizarTipo";
-            this.txt_actualizarTipo.Size = new System.Drawing.Size(190, 26);
-            this.txt_actualizarTipo.TabIndex = 12;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 154);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(117, 20);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "Actualizar Tipo:";
-            // 
             // btn_aceptar
             // 
-            this.btn_aceptar.Enabled = false;
-            this.btn_aceptar.Location = new System.Drawing.Point(289, 255);
+            this.btn_aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_aceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_aceptar.Location = new System.Drawing.Point(247, 109);
             this.btn_aceptar.Name = "btn_aceptar";
-            this.btn_aceptar.Size = new System.Drawing.Size(92, 35);
+            this.btn_aceptar.Size = new System.Drawing.Size(134, 50);
             this.btn_aceptar.TabIndex = 10;
-            this.btn_aceptar.Text = "Aceptar";
+            this.btn_aceptar.Text = "Actualizar";
             this.btn_aceptar.UseVisualStyleBackColor = true;
             this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 118);
+            this.label7.Location = new System.Drawing.Point(6, 72);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(95, 20);
             this.label7.TabIndex = 2;
@@ -238,18 +194,16 @@
             // 
             // cmb_tasas
             // 
-            this.cmb_tasas.Enabled = false;
             this.cmb_tasas.FormattingEnabled = true;
-            this.cmb_tasas.Location = new System.Drawing.Point(191, 71);
+            this.cmb_tasas.Location = new System.Drawing.Point(191, 25);
             this.cmb_tasas.Name = "cmb_tasas";
             this.cmb_tasas.Size = new System.Drawing.Size(190, 28);
             this.cmb_tasas.TabIndex = 1;
-            this.cmb_tasas.SelectedIndexChanged += new System.EventHandler(this.cmb_tasas_SelectedIndexChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 79);
+            this.label6.Location = new System.Drawing.Point(6, 33);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(133, 20);
             this.label6.TabIndex = 0;
@@ -257,43 +211,13 @@
             // 
             // grpAsignarTasas
             // 
-            this.grpAsignarTasas.Controls.Add(this.btn_asignar);
-            this.grpAsignarTasas.Controls.Add(this.cmb_tasasAsignar);
-            this.grpAsignarTasas.Controls.Add(this.label8);
             this.grpAsignarTasas.Controls.Add(this.dataGridView1);
             this.grpAsignarTasas.Location = new System.Drawing.Point(447, 20);
             this.grpAsignarTasas.Name = "grpAsignarTasas";
             this.grpAsignarTasas.Size = new System.Drawing.Size(827, 706);
             this.grpAsignarTasas.TabIndex = 10;
             this.grpAsignarTasas.TabStop = false;
-            this.grpAsignarTasas.Text = "Asignacion de tasa a clientes";
-            // 
-            // btn_asignar
-            // 
-            this.btn_asignar.Location = new System.Drawing.Point(644, 103);
-            this.btn_asignar.Name = "btn_asignar";
-            this.btn_asignar.Size = new System.Drawing.Size(177, 36);
-            this.btn_asignar.TabIndex = 3;
-            this.btn_asignar.Text = "Asignar";
-            this.btn_asignar.UseVisualStyleBackColor = true;
-            this.btn_asignar.Click += new System.EventHandler(this.btn_asignar_Click);
-            // 
-            // cmb_tasasAsignar
-            // 
-            this.cmb_tasasAsignar.FormattingEnabled = true;
-            this.cmb_tasasAsignar.Location = new System.Drawing.Point(644, 52);
-            this.cmb_tasasAsignar.Name = "cmb_tasasAsignar";
-            this.cmb_tasasAsignar.Size = new System.Drawing.Size(177, 28);
-            this.cmb_tasasAsignar.TabIndex = 2;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(640, 25);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(56, 20);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Tasas:";
+            this.grpAsignarTasas.Text = "Historial de tasas de intereses previos";
             // 
             // dataGridView1
             // 
@@ -306,39 +230,46 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(628, 675);
+            this.dataGridView1.Size = new System.Drawing.Size(815, 675);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // grpEliminar
             // 
-            this.grpEliminar.Controls.Add(this.btn_eliminar);
-            this.grpEliminar.Controls.Add(this.cmb_tasasEliminar);
+            this.grpEliminar.Controls.Add(this.txtActualizarImpuestos);
+            this.grpEliminar.Controls.Add(this.btn_ActualizarImpuesto);
             this.grpEliminar.Controls.Add(this.label9);
-            this.grpEliminar.Location = new System.Drawing.Point(12, 639);
+            this.grpEliminar.Location = new System.Drawing.Point(12, 488);
             this.grpEliminar.Name = "grpEliminar";
             this.grpEliminar.Size = new System.Drawing.Size(403, 138);
             this.grpEliminar.TabIndex = 11;
             this.grpEliminar.TabStop = false;
-            this.grpEliminar.Text = "Eliminar tasa";
+            this.grpEliminar.Text = "Actualizar el impuesto a los intereses:";
             // 
-            // btn_eliminar
+            // txtActualizarImpuestos
             // 
-            this.btn_eliminar.Location = new System.Drawing.Point(292, 71);
-            this.btn_eliminar.Name = "btn_eliminar";
-            this.btn_eliminar.Size = new System.Drawing.Size(89, 29);
-            this.btn_eliminar.TabIndex = 2;
-            this.btn_eliminar.Text = "Eliminar";
-            this.btn_eliminar.UseVisualStyleBackColor = true;
-            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
+            this.txtActualizarImpuestos.DecimalPlaces = 2;
+            this.txtActualizarImpuestos.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.txtActualizarImpuestos.Location = new System.Drawing.Point(191, 31);
+            this.txtActualizarImpuestos.Name = "txtActualizarImpuestos";
+            this.txtActualizarImpuestos.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtActualizarImpuestos.Size = new System.Drawing.Size(190, 26);
+            this.txtActualizarImpuestos.TabIndex = 11;
             // 
-            // cmb_tasasEliminar
+            // btn_ActualizarImpuesto
             // 
-            this.cmb_tasasEliminar.FormattingEnabled = true;
-            this.cmb_tasasEliminar.Location = new System.Drawing.Point(191, 28);
-            this.cmb_tasasEliminar.Name = "cmb_tasasEliminar";
-            this.cmb_tasasEliminar.Size = new System.Drawing.Size(190, 28);
-            this.cmb_tasasEliminar.TabIndex = 1;
+            this.btn_ActualizarImpuesto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ActualizarImpuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ActualizarImpuesto.Location = new System.Drawing.Point(247, 71);
+            this.btn_ActualizarImpuesto.Name = "btn_ActualizarImpuesto";
+            this.btn_ActualizarImpuesto.Size = new System.Drawing.Size(134, 45);
+            this.btn_ActualizarImpuesto.TabIndex = 2;
+            this.btn_ActualizarImpuesto.Text = "Actualizar";
+            this.btn_ActualizarImpuesto.UseVisualStyleBackColor = true;
+            this.btn_ActualizarImpuesto.Click += new System.EventHandler(this.btn_ActualizarImpuesto_Click);
             // 
             // label9
             // 
@@ -347,19 +278,24 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(119, 20);
             this.label9.TabIndex = 0;
-            this.label9.Text = "Tasa a eliminar:";
+            this.label9.Text = "Valor impuesto:";
             // 
-            // chkActualizar
+            // btnGenerarExcel
             // 
-            this.chkActualizar.AutoSize = true;
-            this.chkActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkActualizar.Location = new System.Drawing.Point(48, 25);
-            this.chkActualizar.Name = "chkActualizar";
-            this.chkActualizar.Size = new System.Drawing.Size(315, 33);
-            this.chkActualizar.TabIndex = 15;
-            this.chkActualizar.Text = "Actualizar datos de tasa";
-            this.chkActualizar.UseVisualStyleBackColor = true;
-            this.chkActualizar.CheckedChanged += new System.EventHandler(this.chkActualizar_CheckedChanged);
+            this.btnGenerarExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnGenerarExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerarExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarExcel.ForeColor = System.Drawing.Color.White;
+            this.btnGenerarExcel.Image = global::AdminInversiones.Properties.Resources.excel;
+            this.btnGenerarExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGenerarExcel.Location = new System.Drawing.Point(1280, 32);
+            this.btnGenerarExcel.Name = "btnGenerarExcel";
+            this.btnGenerarExcel.Size = new System.Drawing.Size(212, 119);
+            this.btnGenerarExcel.TabIndex = 12;
+            this.btnGenerarExcel.Text = "Generar Excel";
+            this.btnGenerarExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGenerarExcel.UseVisualStyleBackColor = false;
+            this.btnGenerarExcel.Click += new System.EventHandler(this.btnGenerarExcel_Click);
             // 
             // frm_IngresarInteres
             // 
@@ -367,6 +303,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1534, 789);
+            this.Controls.Add(this.btnGenerarExcel);
             this.Controls.Add(this.grpEliminar);
             this.Controls.Add(this.grpAsignarTasas);
             this.Controls.Add(this.grpActualizar);
@@ -381,10 +318,10 @@
             this.grpActualizar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_valorActualizar)).EndInit();
             this.grpAsignarTasas.ResumeLayout(false);
-            this.grpAsignarTasas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.grpEliminar.ResumeLayout(false);
             this.grpEliminar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtActualizarImpuestos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -402,21 +339,14 @@
         private System.Windows.Forms.ComboBox cmb_tasas;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox grpAsignarTasas;
-        private System.Windows.Forms.ComboBox cmb_tasasAsignar;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btn_ingresarTasa;
-        private System.Windows.Forms.Button btn_asignar;
         private System.Windows.Forms.GroupBox grpEliminar;
-        private System.Windows.Forms.Button btn_eliminar;
-        private System.Windows.Forms.ComboBox cmb_tasasEliminar;
+        private System.Windows.Forms.Button btn_ActualizarImpuesto;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txt_descripcionActualizar;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txt_actualizarTipo;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.NumericUpDown txt_valorTasa;
         private System.Windows.Forms.NumericUpDown txt_valorActualizar;
-        private System.Windows.Forms.CheckBox chkActualizar;
+        private System.Windows.Forms.NumericUpDown txtActualizarImpuestos;
+        private System.Windows.Forms.Button btnGenerarExcel;
     }
 }

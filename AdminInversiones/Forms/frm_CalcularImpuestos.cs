@@ -40,10 +40,12 @@ namespace AdminInversiones.Forms
             // Set the Format type and the CustomFormat string.
             dtpFechaImpuestos.Format = DateTimePickerFormat.Custom;
             dtpFechaImpuestos.CustomFormat = "MM/yyyy";
+            dtpFechaImpuestos.ShowUpDown = true;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+           //MessageBox.Show(dtpFechaImpuestos.Value.ToString());
             string fechaImpuestos = dtpFechaImpuestos.Value.Year.ToString() + "-" +
                           dtpFechaImpuestos.Value.Month.ToString() + "-" +
                           dtpFechaImpuestos.Value.Day.ToString();
@@ -147,7 +149,10 @@ namespace AdminInversiones.Forms
             }
             else
             {
-                MessageBox.Show("No hay datos en ese rango de fechas");
+                MessageBox.Show("No hay datos en ese rango de fechas",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
     }

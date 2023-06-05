@@ -26,7 +26,7 @@ namespace AdminInversiones.Forms
         private void btnLogin_Click(object sender, EventArgs e)
         {
             conexionBD = new ConexionBD();  
-            if(conexionBD.verficarLogin(txtUser.Text,txtPassword.Text) == true)
+            if(conexionBD.verificarLogin(txtUser.Text,txtPassword.Text) == true)
             {
                 this.Hide();
                 frm_Principal frmMain = new frm_Principal();
@@ -35,7 +35,10 @@ namespace AdminInversiones.Forms
             }
             else
             {
-                MessageBox.Show("Nombre de usuario equivocado");
+                MessageBox.Show("Nombre de usuario o contraseña incorrecta",
+                    "ERROR",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
                 txtUser.Text = "";
                 txtPassword.Text = "";
             }

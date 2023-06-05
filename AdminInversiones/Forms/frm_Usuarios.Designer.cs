@@ -55,15 +55,18 @@
             // 
             // btnBajaUsuario
             // 
+            this.btnBajaUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnBajaUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBajaUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBajaUsuario.Image = global::AdminInversiones.Properties.Resources.unsubscribe;
+            this.btnBajaUsuario.ForeColor = System.Drawing.Color.White;
+            this.btnBajaUsuario.Image = global::AdminInversiones.Properties.Resources.remove;
             this.btnBajaUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBajaUsuario.Location = new System.Drawing.Point(1089, 46);
             this.btnBajaUsuario.Name = "btnBajaUsuario";
-            this.btnBajaUsuario.Size = new System.Drawing.Size(254, 55);
+            this.btnBajaUsuario.Size = new System.Drawing.Size(254, 70);
             this.btnBajaUsuario.TabIndex = 1;
-            this.btnBajaUsuario.Text = "Eliminar usuario";
-            this.btnBajaUsuario.UseVisualStyleBackColor = true;
+            this.btnBajaUsuario.Text = "Baja usuario";
+            this.btnBajaUsuario.UseVisualStyleBackColor = false;
             this.btnBajaUsuario.Click += new System.EventHandler(this.btnBajaUsuario_Click);
             // 
             // lblBajaUsuarios
@@ -88,28 +91,34 @@
             // 
             // btnGenerarDoc
             // 
+            this.btnGenerarDoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnGenerarDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerarDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerarDoc.Image = global::AdminInversiones.Properties.Resources.document;
+            this.btnGenerarDoc.ForeColor = System.Drawing.Color.White;
+            this.btnGenerarDoc.Image = global::AdminInversiones.Properties.Resources.pdf;
             this.btnGenerarDoc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGenerarDoc.Location = new System.Drawing.Point(1089, 164);
             this.btnGenerarDoc.Name = "btnGenerarDoc";
-            this.btnGenerarDoc.Size = new System.Drawing.Size(254, 55);
+            this.btnGenerarDoc.Size = new System.Drawing.Size(254, 70);
             this.btnGenerarDoc.TabIndex = 8;
             this.btnGenerarDoc.Text = "Generar PDF";
-            this.btnGenerarDoc.UseVisualStyleBackColor = true;
+            this.btnGenerarDoc.UseVisualStyleBackColor = false;
             this.btnGenerarDoc.Click += new System.EventHandler(this.btnGenerarDoc_Click);
             // 
             // btnGenerarExcel
             // 
+            this.btnGenerarExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnGenerarExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerarExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarExcel.ForeColor = System.Drawing.Color.White;
             this.btnGenerarExcel.Image = global::AdminInversiones.Properties.Resources.excel;
             this.btnGenerarExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGenerarExcel.Location = new System.Drawing.Point(1093, 225);
+            this.btnGenerarExcel.Location = new System.Drawing.Point(1092, 243);
             this.btnGenerarExcel.Name = "btnGenerarExcel";
-            this.btnGenerarExcel.Size = new System.Drawing.Size(251, 55);
+            this.btnGenerarExcel.Size = new System.Drawing.Size(251, 70);
             this.btnGenerarExcel.TabIndex = 9;
             this.btnGenerarExcel.Text = "Generar Excel";
-            this.btnGenerarExcel.UseVisualStyleBackColor = true;
+            this.btnGenerarExcel.UseVisualStyleBackColor = false;
             this.btnGenerarExcel.Click += new System.EventHandler(this.btnGenerarExcel_Click);
             // 
             // frm_Usuarios
