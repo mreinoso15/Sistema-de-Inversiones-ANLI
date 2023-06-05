@@ -47,6 +47,7 @@ namespace AdminInversiones
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(960, 727);
@@ -55,6 +56,10 @@ namespace AdminInversiones
             // 
             // btn_Aprobar
             // 
+            this.btn_Aprobar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btn_Aprobar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Aprobar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.btn_Aprobar.ForeColor = System.Drawing.Color.White;
             this.btn_Aprobar.Image = global::AdminInversiones.Properties.Resources._checked;
             this.btn_Aprobar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Aprobar.Location = new System.Drawing.Point(1003, 123);
@@ -62,11 +67,16 @@ namespace AdminInversiones
             this.btn_Aprobar.Size = new System.Drawing.Size(230, 65);
             this.btn_Aprobar.TabIndex = 11;
             this.btn_Aprobar.Text = "Aprobar Retiro";
-            this.btn_Aprobar.UseVisualStyleBackColor = true;
+            this.btn_Aprobar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Aprobar.UseVisualStyleBackColor = false;
             this.btn_Aprobar.Click += new System.EventHandler(this.btn_Aprobar_Click);
             // 
             // btn_Rechazar
             // 
+            this.btn_Rechazar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btn_Rechazar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Rechazar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.btn_Rechazar.ForeColor = System.Drawing.Color.White;
             this.btn_Rechazar.Image = global::AdminInversiones.Properties.Resources.remove;
             this.btn_Rechazar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Rechazar.Location = new System.Drawing.Point(1003, 209);
@@ -74,7 +84,8 @@ namespace AdminInversiones
             this.btn_Rechazar.Size = new System.Drawing.Size(230, 65);
             this.btn_Rechazar.TabIndex = 13;
             this.btn_Rechazar.Text = "Rechazar Retiro";
-            this.btn_Rechazar.UseVisualStyleBackColor = true;
+            this.btn_Rechazar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Rechazar.UseVisualStyleBackColor = false;
             this.btn_Rechazar.Click += new System.EventHandler(this.btn_Rechazar_Click);
             // 
             // txtCantidadRetiro
@@ -85,8 +96,12 @@ namespace AdminInversiones
             0,
             0,
             65536});
-            this.txtCantidadRetiro.Maximum = Decimal.MaxValue;
             this.txtCantidadRetiro.Location = new System.Drawing.Point(1003, 76);
+            this.txtCantidadRetiro.Maximum = new decimal(new int[] {
+            -1,
+            -1,
+            -1,
+            0});
             this.txtCantidadRetiro.Name = "txtCantidadRetiro";
             this.txtCantidadRetiro.Size = new System.Drawing.Size(230, 26);
             this.txtCantidadRetiro.TabIndex = 15;

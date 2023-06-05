@@ -14,6 +14,7 @@ namespace AdminInversiones
         private List<int> listaDias;
         private List<double> listaIntereses;
         int idRetiro, idUsuario;
+        double impuestos;
         double cantidadRetiro;
         ConexionBD conexion;
         public frm_SolicitudRetiro()
@@ -25,17 +26,33 @@ namespace AdminInversiones
         {
             conexion = new ConexionBD();
             dataGridView1.DataSource = conexion.obtenerSolicitudesRetiro();
+            dataGridView1.Columns.Cast<DataGridViewColumn>().ToList().ForEach(f => f.SortMode = DataGridViewColumnSortMode.NotSortable);
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            idRetiro = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["ID Retiro"].Value.ToString());
-            idUsuario = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["No. Socio"].Value.ToString());
+            try
+            {
+                idRetiro = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["ID Retiro"].Value.ToString());
+                idUsuario = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["No. Socio"].Value.ToString());
+                conexionBD = new ConexionBD();
+                impuestos = conexionBD.obtenerImpuestos(idUsuario);
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                MessageBox.Show("Selecciona una fila por favor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void btn_Aprobar_Click(object sender, EventArgs e)
         {
+            aprobarRetiro();
+        }
 
+        private void aprobarRetiro()
+        {
+            conexionBD = new ConexionBD();
             DialogResult result = MessageBox.Show($"Esta seguro que quiere retirar: \n {txtCantidadRetiro.Value}",
                                                     "Advertencia",
                                                     MessageBoxButtons.YesNo,
@@ -43,20 +60,26 @@ namespace AdminInversiones
                                                     MessageBoxDefaultButton.Button2);
 
             double total = conexion.obtenerTotal(idUsuario);
+            //MessageBox.Show("El total del usuario es: "+total + "");
             if (total >= Decimal.ToDouble(txtCantidadRetiro.Value))
             {
                 switch (result)
                 {
                     case DialogResult.Yes:
-                        if (dataGridView1.CurrentRow.Selected == true)
+                        try
                         {
                             cantidadRetiro = Decimal.ToDouble(txtCantidadRetiro.Value);
-                            codigoBoton();
+                            llenarListaInversiones();
                             conexion.aceptarSolicitudRetiro(idRetiro, cantidadRetiro);
                             dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
-                            MessageBox.Show("La solicitud ha sido aceptada", "Retiros");
+                            double nuevoTotal = conexion.obtenerTotal(idUsuario);
+                            conexionBD.insertarNuevosDepositosTotales(idUsuario, nuevoTotal);
+                            conexionBD.borrarDepositosCalculados();
+                            conexionBD.borrarImpuestosNulos();
+                            MessageBox.Show("La solicitud ha sido aceptada", "Retiros",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                            txtCantidadRetiro.Value = (decimal)0.00;
                         }
-                        else
+                        catch (Exception ex)
                         {
                             MessageBox.Show("Favor de seleccionar una fila ", "Retiros");
                         }
@@ -68,13 +91,13 @@ namespace AdminInversiones
             }
             else
             {
-                MessageBox.Show("No tiene los fondos necesarios para realizar su retiro","Retiros",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("No tiene los fondos necesarios para realizar su retiro", "Retiros", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
         }
 
         private void btn_Rechazar_Click(object sender, EventArgs e)
         {
+            
             if (dataGridView1.CurrentRow.Selected == true)
             {
                 conexion.rechazarSolicitudRetiro(idRetiro);
@@ -88,7 +111,7 @@ namespace AdminInversiones
             }
         }//Evento btnRechazar
 
-        private void codigoBoton()
+        private void llenarListaInversiones()
         {
             conexionBD = new ConexionBD();
             inversiones = conexionBD.obtenerInversiones(inversiones);
@@ -97,9 +120,10 @@ namespace AdminInversiones
         }
         private void calcularInteres(int idUsuario)
         {
+            double totalImpuesto = 0.0;
             listaDias = new List<int>();
             listaIntereses = new List<double>();
-            if (inversiones.Any())
+            if (!inversiones.Any())
             {
                 MessageBox.Show("No hay inversiones a calcular", "Retiros", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 
@@ -110,22 +134,24 @@ namespace AdminInversiones
                 {
                     if (idUsuario == inversiones[i].NoSocio)
                     {
+                        
                         int diasInvertidos = (DateTime.Now - inversiones[i].Fecha).Days;
                         double interes = (Math.Round(inversiones[i].Tasa, 2) * diasInvertidos * Math.Round(inversiones[i].Cantidad, 2)) / 360;
+                        totalImpuesto = Math.Round(impuestos * interes,2);
                         listaIntereses.Add(Math.Round(interes, 2));
                         listaDias.Add(diasInvertidos);
-                        conexionBD.actualizarInteresGenerado(inversiones[i].NoSocio, interes);
+                        if(interes > 0)
+                        {
+                            conexionBD.actualizarInteresGenerado(inversiones[i].NoSocio, interes);
+                        }
                         conexionBD.actualizarEstadoInteres(inversiones[i].solicitudInv);
-                        /*cad += "# de Socio: " + inversiones[i].NoSocio + " " + "\n" +
-                                "Interes generado: " + Math.Round(interes, 2) + "\n" +
-                                "Calculado a " + diasInvertidos + " dias con una tasa de " + inversiones[i].Tasa + "\n\n";*/
-                    }//IF
+                        conexionBD.insertarImpuestosRetiro(idUsuario, totalImpuesto);
+                     }//IF
                 }//FOR
                 conexionBD.nuevoTotal(idUsuario);
-                
             }//ELSE
             
-        }
+        }//CALCULAR INTERES
 
     }
 

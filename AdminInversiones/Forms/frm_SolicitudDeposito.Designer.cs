@@ -54,22 +54,35 @@
             // 
             // btn_Aceptar
             // 
+            this.btn_Aceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btn_Aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Aceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.btn_Aceptar.ForeColor = System.Drawing.Color.White;
+            this.btn_Aceptar.Image = global::AdminInversiones.Properties.Resources._checked;
+            this.btn_Aceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Aceptar.Location = new System.Drawing.Point(978, 82);
             this.btn_Aceptar.Name = "btn_Aceptar";
-            this.btn_Aceptar.Size = new System.Drawing.Size(230, 97);
+            this.btn_Aceptar.Size = new System.Drawing.Size(230, 108);
             this.btn_Aceptar.TabIndex = 9;
             this.btn_Aceptar.Text = "Aceptar Deposito";
-            this.btn_Aceptar.UseVisualStyleBackColor = true;
+            this.btn_Aceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Aceptar.UseVisualStyleBackColor = false;
             this.btn_Aceptar.Click += new System.EventHandler(this.btn_Aceptar_Click);
             // 
             // btn_Rechazar
             // 
-            this.btn_Rechazar.Location = new System.Drawing.Point(978, 185);
+            this.btn_Rechazar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btn_Rechazar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Rechazar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.btn_Rechazar.ForeColor = System.Drawing.Color.White;
+            this.btn_Rechazar.Image = global::AdminInversiones.Properties.Resources.remove;
+            this.btn_Rechazar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Rechazar.Location = new System.Drawing.Point(978, 196);
             this.btn_Rechazar.Name = "btn_Rechazar";
-            this.btn_Rechazar.Size = new System.Drawing.Size(230, 97);
+            this.btn_Rechazar.Size = new System.Drawing.Size(230, 108);
             this.btn_Rechazar.TabIndex = 10;
             this.btn_Rechazar.Text = "Rechazar";
-            this.btn_Rechazar.UseVisualStyleBackColor = true;
+            this.btn_Rechazar.UseVisualStyleBackColor = false;
             this.btn_Rechazar.Click += new System.EventHandler(this.btn_Rechazar_Click);
             // 
             // txtFolio

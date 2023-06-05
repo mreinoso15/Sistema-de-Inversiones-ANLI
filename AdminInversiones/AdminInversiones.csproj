@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -151,11 +166,11 @@
   <ItemGroup>
     <Compile Include="Classes\ConexionBD.cs" />
     <Compile Include="Classes\Documentos.cs" />
-    <Compile Include="Forms\frm_CalcularInteres.cs">
+    <Compile Include="Forms\frm_CalcularImpuestos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_CalcularInteres.Designer.cs">
-      <DependentUpon>frm_CalcularInteres.cs</DependentUpon>
+    <Compile Include="Forms\frm_CalcularImpuestos.Designer.cs">
+      <DependentUpon>frm_CalcularImpuestos.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frm_IngresarInteres.cs">
       <SubType>Form</SubType>
@@ -200,9 +215,18 @@
       <DependentUpon>frm_SolicitudRetiro.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Inversiones.cs" />
+    <Compile Include="Forms\frm_Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Usuarios.Designer.cs">
+      <DependentUpon>frm_Usuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\ThemeColor.cs" />
+    <EmbeddedResource Include="Forms\frm_CalcularImpuestos.resx">
+      <DependentUpon>frm_CalcularImpuestos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frm_IngresarInteres.resx">
       <DependentUpon>frm_IngresarInteres.cs</DependentUpon>
     </EmbeddedResource>
@@ -224,8 +248,12 @@
     <EmbeddedResource Include="Forms\frm_SolicitudRetiro.resx">
       <DependentUpon>frm_SolicitudRetiro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Usuarios.resx">
+      <DependentUpon>frm_Usuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -260,9 +288,33 @@
     <None Include="Recursos\lock.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Recursos\plantilla_impuestos_usuario.html" />
+    <None Include="Recursos\plantilla_general.html" />
+    <None Include="Recursos\Which-Type-of-Investment-Has-the-Highest-Risk-1400x826.jpg" />
+    <None Include="Recursos\search.png" />
+    <None Include="Recursos\plantilla_usuarios.html" />
+    <None Include="Recursos\unsubscribe.png" />
+    <None Include="Recursos\profile.png" />
+    <None Include="Recursos\plantilla_impuestos.html" />
     <None Include="Recursos\remove.png" />
     <None Include="Recursos\checked.png" />
+    <None Include="Recursos\loupe.png" />
+    <None Include="Recursos\document.png" />
+    <None Include="Recursos\excel.png" />
+    <None Include="Recursos\pdf.png" />
     <Content Include="Recursos\plantilla.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

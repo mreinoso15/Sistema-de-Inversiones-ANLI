@@ -121,7 +121,7 @@
   <data name="btn_CerrarSesion.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAB
-        WQAAAVkBDSjIBQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAcfSURBVHhe7Zt5
+        UAAAAVAB++UihAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAcfSURBVHhe7Zt5
         UJRlGMDZE1hWYDl3EVluOTRAcBEEuZVD1yMQQQSvarQ0Z6zQ6Z/6w9GE/siiFIeaqZxsKg01Lw5BNMeD
         xg5FMW5GLtMxU0ctnp73xe9zF79wWXaJxX1mfrP7fd/L9z7Pj+9+97N4RlQiMMr0C4Wi4oyMXJmDg0sU
         Tt8ctJzhH6QVeR9xRIwSWp0KhEKwspawWFNsQCKRGpSg4AhIS8+B+AQ12Nk5cLaxsrLWzK0FUSIGDxBJ
@@ -238,7 +238,7 @@
   <data name="btn_Depositos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAB
-        WQAAAVkBDSjIBQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAjkSURBVHhe7ZsL
+        UAAAAVAB++UihAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAjkSURBVHhe7ZsL
         UBXXGccFLl5QnmoUBAQFQZCiiIBiVBQMNIIiUcJDB4rQGBGpqDwkjI8qBlErtiFIMD5iBE0wPkpjhCpE
         bGsM0STY2ja2SdMm0WkmaZJqY0y+ft+Bc9h774KXy31wZ/zP/Ga4e87u+b7/7jl79uwySI+agfwO+RaB
         AQDF8XtkJmJwjUf+i8gFYmruIH6IQbUFAQsLS/B/LBd+FF9ocvxjVoOFpRU3oYyCNKReQsB+lDdkHIEB
@@ -1010,6 +1010,30 @@
         RXt1ErYka2uxU4pAKgdvZBEyZZjqQSisjIZ70A0jkYjUcutFWQMOxWDW4vYybnGYEPHqiLCx64lunkl2
         1FFBDHHp7OU+0lKQ8doyvWSVXOXqO1r7+TT1cm9qY06FVXR6+Ia1rYdm6OtlEgWRBOmQo1gsMKnGN7Wl
         UTOZFVqaRcho9otsaa/hyXTod7VYFilfcxJjufmlxrSJUhmAlPQi6va9Hrqvb/qPH/sSq+gA/wBE/9k=
+</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA
+        AAABlvD/AIru/wCL7v8AmPH/AJjx/wCY8f8AmPH/AJnx/wCY8f8AmPH/AJjx/wCU8P8Bge3/AZDv/wCZ
+        8f8AmPH/A4Hs/wKS8P8AiO7/AIru/wCS8P8AkfD/ApDw/wOQ7/8Ck/D/AJjx/wCY8f8AmPH/AJDv/wh9
+        7P8Ej+//AJjx/wWJ7v8MfOz/A5Hw/wCK7v8Ahe7/AYPt/wWC7f8KgOz/D3nr/waN7/8AmfH/AJjx/wCZ
+        8f8Fju//FXHq/xF57P8BmfH/CInu/xJ36/8JiO7/AZfx/wCZ8f8AmfH/AJnx/wSQ7/8ReOv/Bo3v/wCZ
+        8f8AmPH/AJjx/w5/7P8TdOv/Apjx/wCZ8f8QfOz/G2fp/wKV8f8EkvD/BJHw/wSR7/8CkvD/B4nu/xRx
+        6v8HjO//AJnx/wCZ8f8AmPH/AJjx/wKZ8f8Ake//An7p/wV66f8Cf+r/HWDm/yRa5f8eXuT/GGHk/xBl
+        5P8JYeL/FmTm/wl96v8Dger/AZDv/wCY8f8BmfH/AYzt/wZj4f8GXuD/Bl/g/xlV4v8oUOL/JFPi/x1X
+        4f8UWuH/CV7g/xRa4f8hT+P/GVbj/wSK7f8AmfH/AZjx/wGQ7/8Keen/Dm3m/xRd4v8TYeP/D3Ho/xhn
+        5v8bWuL/EWzm/xdf4/8bWuL/GmTn/xJ06/8BlvD/AJjx/wKR7/8GgOf/DH7p/wuC7f8bXuP/FWvm/wOS
+        8P8ZZ+b/HFji/wqA6/8Ya+f/IVnk/waM7v8AmfH/AJjx/wCY8f8Cj+//CH/o/w175/8Zauj/JVPj/yFb
+        5P8Mgez/IFrj/xxX4f8Taub/JVfl/ytO4/8Td+v/AJnx/wCY8f8AmPH/ApXw/wOK7v8Jhu3/Gmvo/yxN
+        4/8pUeT/EXvr/x9c5P8cWOH/F2Ll/ytK5P8vROP/Gmrp/wCZ8f8AmPH/AJjx/wKY8f8AmPH/AJnx/w99
+        7P8mU+b/IV3n/weM7/8Jhu3/C3/r/wmG7f8hW+f/J1Dm/xB67P8AmfH/AJjx/wCY8f8CmPH/AJjx/wGV
+        8P8ClfD/BJDw/wOT8P8AmPH/A43t/wSR7/8AmfH/A5Pw/wSQ8P8BlfD/BIvt/wSQ7/8AmPH/AZnx/wCU
+        8P8Hgun/CoTr/wGY8f8AmPH/AJfx/wWJ6/8Fju7/AJjx/wCY8f8AmfH/AZDu/wt75f8Lg+v/AJjx/wGZ
+        8f8AlO//CIDm/wqE6/8Bl/H/AJjx/wCY8f8AmPH/AJjx/wCY8f8AmPH/AJjx/wCV8P8Fier/BJDu/wCY
+        8f8CmPH/AJjx/wGU7/8BlvD/AJjx/wCY8f8AmPH/AJjx/wCY8f8AmPH/AJjx/wCY8f8AmPH/AJjx/wCY
+        8f8AmPH/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAA==
 </value>
   </data>
 </root>
