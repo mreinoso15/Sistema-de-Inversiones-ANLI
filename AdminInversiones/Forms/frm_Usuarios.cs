@@ -24,6 +24,8 @@ namespace AdminInversiones.Forms
         double total = 0;
         Documentos docExcel = new Documentos();
         private List<Usuario> usuarios;
+        private Form activeForm;
+        private frm_Principal frmPrincipal = new frm_Principal();
         public frm_Usuarios()
         {
             InitializeComponent();
@@ -58,6 +60,7 @@ namespace AdminInversiones.Forms
                     MessageBox.Show($"Se dio de baja al usuario de manera correcta y se genero un retiro de  ${total} ","Usuarios",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
+                    conexion.borrarRetirosNulos(idUsuario);
                 }
             }
             else

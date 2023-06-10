@@ -41,32 +41,47 @@ namespace AdminInversiones
 
         private void btn_AceptarSolicitud_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.CurrentRow.Selected == true)
+            try
             {
-                conexion.aceptarSolicitudRegistro(idSolicitud);
-                dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
-                MessageBox.Show("La solicitud ha sido aceptada","Registro de usuarios",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                if (dataGridView1.CurrentRow.Selected == true)
+                {
+                    conexion.aceptarSolicitudRegistro(idSolicitud);
+                    dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
+                    MessageBox.Show("La solicitud ha sido aceptada", "Registro de usuarios", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                }
+                else
+                {
+                    MessageBox.Show("Favor de seleccionar una fila primero", "Registro de usuarios", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
-            else
+            catch (Exception error)
             {
-                MessageBox.Show("Favor de seleccionar una fila primero","Registro de usuarios", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                
+                MessageBox.Show("Favor de seleccionar una fila primero ", "Registro de usuarios", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
         private void btn_RechazarSolicitud_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.CurrentRow.Selected == true)
-            {
-                conexion.rechazarSolicitudRegistro(idSolicitud);
-                dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
-                MessageBox.Show("La solicitud ha sido rechazada correctamente");
+            try {
+                if (dataGridView1.CurrentRow.Selected == true)
+                {
+                    conexion.rechazarSolicitudRegistro(idSolicitud);
+                    dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
+                    MessageBox.Show("La solicitud ha sido rechazada correctamente");
 
+                }
+                else
+                {
+                    MessageBox.Show("Favor de seleccionar una fila primero");
+                }
             }
-            else
+            catch(NullReferenceException error)
             {
-                MessageBox.Show("Favor de seleccionar una fila primero");
+                MessageBox.Show("Favor de seleccionar una fila primero ", "Registro de usuarios", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+            
         }
     }
 }

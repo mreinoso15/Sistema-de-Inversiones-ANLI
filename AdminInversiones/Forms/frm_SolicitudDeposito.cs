@@ -14,7 +14,8 @@ namespace AdminInversiones
 {
     public partial class frm_SolicitudDeposito : Form
     {
-        private int idDeposito, idUsuario; 
+        private int idDeposito;
+        private int idUsuario = 0; 
         private string URLS;
         
         ConexionBD conexion;
@@ -34,28 +35,41 @@ namespace AdminInversiones
 
         private void btn_Aceptar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show($"Verifique el numero de deposito: \n {txtFolio.Text}\n ¿Esta seguro que es correcto?",
+            if(idUsuario == 0)
+            {
+                MessageBox.Show("Favor de seleccionar una fila primero ", "Solicitudes Deposito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show($"Verifique el numero de deposito: \n {txtFolio.Text}\n ¿Esta seguro que es correcto?",
                                                     "Advertencia",
                                                     MessageBoxButtons.YesNo,
                                                     MessageBoxIcon.Warning,
                                                     MessageBoxDefaultButton.Button2);
-            if(result == DialogResult.Yes)
-            {
-                if (dataGridView1.CurrentRow.Selected == true && txtFolio.Text != "")
+                if (result == DialogResult.Yes)
                 {
-                    conexion.aceptarSolicitudDeposito(idDeposito, txtFolio.Text);
-                    dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
-                    MessageBox.Show("La solicitud ha sido aceptada", "Depositos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    try
+                    {
+                        if (dataGridView1.CurrentRow.Selected == true && txtFolio.Text != "")
+                        {
+                            conexion.aceptarSolicitudDeposito(idDeposito, txtFolio.Text);
+                            dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
+                            MessageBox.Show("La solicitud ha sido aceptada", "Depositos", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    txtFolio.Text = "";
-                }
-                else
-                {
-                    MessageBox.Show("Favor de seleccionar una fila y verificar que el folio fue ingresado");
+                            txtFolio.Text = "";
+                        }
+                        else
+                        {
+                            MessageBox.Show("Favor de seleccionar una fila y verificar que el folio fue ingresado");
+                        }
+                    }
+                    catch (NullReferenceException error)
+                    {
+                        MessageBox.Show("Favor de seleccionar una fila primero ", "Solicitudes Deposito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+
                 }
             }
-            
-            
         }
 
    
@@ -90,17 +104,25 @@ namespace AdminInversiones
 
         private void btn_Rechazar_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.CurrentRow.Selected == true)
+            try
             {
-                conexion.rechazarSolicitudDeposito(idDeposito);
-                dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
-                MessageBox.Show("La solicitud ha sido rechazada correctamente","Depositos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (dataGridView1.CurrentRow.Selected == true)
+                {
+                    conexion.rechazarSolicitudDeposito(idDeposito);
+                    dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
+                    MessageBox.Show("La solicitud ha sido rechazada correctamente", "Depositos", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                }
+                else
+                {
+                    MessageBox.Show("Favor de seleccionar una fila primero");
+                }
             }
-            else
+            catch (NullReferenceException error)
             {
-                MessageBox.Show("Favor de seleccionar una fila primero");
+                MessageBox.Show("Favor de seleccionar una fila primero ", "Solicitudes Deposito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+            
         }
     }
 }

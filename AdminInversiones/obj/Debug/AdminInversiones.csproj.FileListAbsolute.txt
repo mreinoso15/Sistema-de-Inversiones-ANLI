@@ -89,7 +89,6 @@ C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\Sy
 C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\System.Threading.Tasks.Extensions.dll
 C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\System.ValueTuple.dll
-C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\BouncyCastle.Crypto.xml
 C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\itext.barcodes.xml
 C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\itext.commons.xml
 C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\itext.forms.xml
@@ -118,3 +117,13 @@ C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\Sy
 C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\System.ValueTuple.xml
 C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\obj\Debug\AdminInversiones.Forms.frm_CalcularImpuestos.resources
 C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\obj\Debug\AdminInversiones.Forms.frm_Usuarios.resources
+C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\itext.bouncy-castle-connector.dll
+C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\itext.bouncy-castle-connector.xml
+C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\bc-fips-1.0.2.dll
+C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\bcpkix-fips-1.0.2.dll
+C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\itext.bouncy-castle-fips-adapter.dll
+C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\itext.bouncy-castle-fips-adapter.xml
+C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\itext.bouncy-castle-adapter.dll
+C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\bin\Debug\itext.bouncy-castle-adapter.xml
+C:\Users\marti\Documents\Proyecto ANLI Inversiones\AdminInversiones\obj\Debug\AdminInversiones.Forms.frm_DepositosRetiros.resources

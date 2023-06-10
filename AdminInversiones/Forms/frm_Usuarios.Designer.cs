@@ -30,7 +30,6 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnBajaUsuario = new System.Windows.Forms.Button();
-            this.lblBajaUsuarios = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnGenerarDoc = new System.Windows.Forms.Button();
             this.btnGenerarExcel = new System.Windows.Forms.Button();
@@ -61,7 +60,7 @@
             this.btnBajaUsuario.ForeColor = System.Drawing.Color.White;
             this.btnBajaUsuario.Image = global::AdminInversiones.Properties.Resources.remove;
             this.btnBajaUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBajaUsuario.Location = new System.Drawing.Point(1089, 46);
+            this.btnBajaUsuario.Location = new System.Drawing.Point(1089, 12);
             this.btnBajaUsuario.Name = "btnBajaUsuario";
             this.btnBajaUsuario.Size = new System.Drawing.Size(254, 70);
             this.btnBajaUsuario.TabIndex = 1;
@@ -69,21 +68,11 @@
             this.btnBajaUsuario.UseVisualStyleBackColor = false;
             this.btnBajaUsuario.Click += new System.EventHandler(this.btnBajaUsuario_Click);
             // 
-            // lblBajaUsuarios
-            // 
-            this.lblBajaUsuarios.AutoSize = true;
-            this.lblBajaUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBajaUsuarios.Location = new System.Drawing.Point(1084, 9);
-            this.lblBajaUsuarios.Name = "lblBajaUsuarios";
-            this.lblBajaUsuarios.Size = new System.Drawing.Size(248, 25);
-            this.lblBajaUsuarios.TabIndex = 3;
-            this.lblBajaUsuarios.Text = "Dar de baja a un usuario";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1084, 119);
+            this.label1.Location = new System.Drawing.Point(1087, 85);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(260, 25);
             this.label1.TabIndex = 4;
@@ -97,7 +86,7 @@
             this.btnGenerarDoc.ForeColor = System.Drawing.Color.White;
             this.btnGenerarDoc.Image = global::AdminInversiones.Properties.Resources.pdf;
             this.btnGenerarDoc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGenerarDoc.Location = new System.Drawing.Point(1089, 164);
+            this.btnGenerarDoc.Location = new System.Drawing.Point(1089, 113);
             this.btnGenerarDoc.Name = "btnGenerarDoc";
             this.btnGenerarDoc.Size = new System.Drawing.Size(254, 70);
             this.btnGenerarDoc.TabIndex = 8;
@@ -113,7 +102,7 @@
             this.btnGenerarExcel.ForeColor = System.Drawing.Color.White;
             this.btnGenerarExcel.Image = global::AdminInversiones.Properties.Resources.excel;
             this.btnGenerarExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGenerarExcel.Location = new System.Drawing.Point(1092, 243);
+            this.btnGenerarExcel.Location = new System.Drawing.Point(1089, 189);
             this.btnGenerarExcel.Name = "btnGenerarExcel";
             this.btnGenerarExcel.Size = new System.Drawing.Size(251, 70);
             this.btnGenerarExcel.TabIndex = 9;
@@ -130,7 +119,6 @@
             this.Controls.Add(this.btnGenerarExcel);
             this.Controls.Add(this.btnGenerarDoc);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblBajaUsuarios);
             this.Controls.Add(this.btnBajaUsuario);
             this.Controls.Add(this.dataGridView1);
             this.Name = "frm_Usuarios";
@@ -146,7 +134,6 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnBajaUsuario;
-        private System.Windows.Forms.Label lblBajaUsuarios;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnGenerarDoc;
         private System.Windows.Forms.Button btnGenerarExcel;

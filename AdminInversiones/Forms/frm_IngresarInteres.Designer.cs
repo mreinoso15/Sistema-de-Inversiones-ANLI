@@ -214,7 +214,7 @@
             this.grpAsignarTasas.Controls.Add(this.dataGridView1);
             this.grpAsignarTasas.Location = new System.Drawing.Point(447, 20);
             this.grpAsignarTasas.Name = "grpAsignarTasas";
-            this.grpAsignarTasas.Size = new System.Drawing.Size(827, 706);
+            this.grpAsignarTasas.Size = new System.Drawing.Size(730, 706);
             this.grpAsignarTasas.TabIndex = 10;
             this.grpAsignarTasas.TabStop = false;
             this.grpAsignarTasas.Text = "Historial de tasas de intereses previos";
@@ -230,7 +230,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(815, 675);
+            this.dataGridView1.Size = new System.Drawing.Size(711, 675);
             this.dataGridView1.TabIndex = 0;
             // 
             // grpEliminar
@@ -287,13 +287,13 @@
             this.btnGenerarExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerarExcel.ForeColor = System.Drawing.Color.White;
             this.btnGenerarExcel.Image = global::AdminInversiones.Properties.Resources.excel;
-            this.btnGenerarExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGenerarExcel.Location = new System.Drawing.Point(1280, 32);
+            this.btnGenerarExcel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnGenerarExcel.Location = new System.Drawing.Point(1183, 32);
             this.btnGenerarExcel.Name = "btnGenerarExcel";
-            this.btnGenerarExcel.Size = new System.Drawing.Size(212, 119);
+            this.btnGenerarExcel.Size = new System.Drawing.Size(161, 119);
             this.btnGenerarExcel.TabIndex = 12;
             this.btnGenerarExcel.Text = "Generar Excel";
-            this.btnGenerarExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGenerarExcel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGenerarExcel.UseVisualStyleBackColor = false;
             this.btnGenerarExcel.Click += new System.EventHandler(this.btnGenerarExcel_Click);
             // 

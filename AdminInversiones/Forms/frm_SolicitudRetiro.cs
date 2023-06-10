@@ -13,7 +13,8 @@ namespace AdminInversiones
         private List<Inversiones> inversiones;
         private List<int> listaDias;
         private List<double> listaIntereses;
-        int idRetiro, idUsuario;
+        int idRetiro;
+        int idUsuario = 0;
         double impuestos;
         double cantidadRetiro;
         ConexionBD conexion;
@@ -47,7 +48,15 @@ namespace AdminInversiones
 
         private void btn_Aprobar_Click(object sender, EventArgs e)
         {
-            aprobarRetiro();
+            if (idUsuario == 0)
+            {
+                MessageBox.Show("Favor de seleccionar una fila ", "Retiros", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                aprobarRetiro();
+            }
+            
         }
 
         private void aprobarRetiro()
@@ -81,7 +90,7 @@ namespace AdminInversiones
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Favor de seleccionar una fila ", "Retiros");
+                            MessageBox.Show("Favor de seleccionar una fila ", "Retiros",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                         }
                         break;
 
@@ -97,17 +106,23 @@ namespace AdminInversiones
 
         private void btn_Rechazar_Click(object sender, EventArgs e)
         {
-            
-            if (dataGridView1.CurrentRow.Selected == true)
+            try
             {
-                conexion.rechazarSolicitudRetiro(idRetiro);
-                dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
-                MessageBox.Show("La solicitud ha sido rechazada correctamente","Retiros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (dataGridView1.CurrentRow.Selected == true)
+                {
+                    conexion.rechazarSolicitudRetiro(idRetiro);
+                    dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
+                    MessageBox.Show("La solicitud ha sido rechazada correctamente", "Retiros", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                }
+                else
+                {
+                    MessageBox.Show("Favor de seleccionar una fila primero");
+                }
             }
-            else
+             catch (Exception ex)
             {
-                MessageBox.Show("Favor de seleccionar una fila primero");
+                MessageBox.Show("Favor de seleccionar una fila ", "Retiros", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }//Evento btnRechazar
 
@@ -145,7 +160,6 @@ namespace AdminInversiones
                             conexionBD.actualizarInteresGenerado(inversiones[i].NoSocio, interes);
                         }
                         conexionBD.actualizarEstadoInteres(inversiones[i].solicitudInv);
-                        conexionBD.insertarImpuestosRetiro(idUsuario, totalImpuesto);
                      }//IF
                 }//FOR
                 conexionBD.nuevoTotal(idUsuario);

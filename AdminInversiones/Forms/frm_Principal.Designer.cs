@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Principal));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnDepositosRetiros = new System.Windows.Forms.Button();
             this.btn_Usuarios = new System.Windows.Forms.Button();
             this.pnlSubMenu = new System.Windows.Forms.Panel();
             this.btnCalcularImpuestos = new System.Windows.Forms.Button();
@@ -56,6 +57,7 @@
             // 
             this.panelMenu.AutoScroll = true;
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelMenu.Controls.Add(this.btnDepositosRetiros);
             this.panelMenu.Controls.Add(this.btn_Usuarios);
             this.panelMenu.Controls.Add(this.pnlSubMenu);
             this.panelMenu.Controls.Add(this.btn_CerrarSesion);
@@ -69,8 +71,26 @@
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(338, 1020);
+            this.panelMenu.Size = new System.Drawing.Size(338, 1045);
             this.panelMenu.TabIndex = 1;
+            // 
+            // btnDepositosRetiros
+            // 
+            this.btnDepositosRetiros.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDepositosRetiros.FlatAppearance.BorderSize = 0;
+            this.btnDepositosRetiros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDepositosRetiros.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDepositosRetiros.ForeColor = System.Drawing.Color.GhostWhite;
+            this.btnDepositosRetiros.Image = global::AdminInversiones.Properties.Resources.atm;
+            this.btnDepositosRetiros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDepositosRetiros.Location = new System.Drawing.Point(0, 926);
+            this.btnDepositosRetiros.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDepositosRetiros.Name = "btnDepositosRetiros";
+            this.btnDepositosRetiros.Size = new System.Drawing.Size(312, 106);
+            this.btnDepositosRetiros.TabIndex = 15;
+            this.btnDepositosRetiros.Text = "Depositos/Retiros";
+            this.btnDepositosRetiros.UseVisualStyleBackColor = true;
+            this.btnDepositosRetiros.Click += new System.EventHandler(this.btnDepositosRetiros_Click);
             // 
             // btn_Usuarios
             // 
@@ -142,11 +162,11 @@
             this.btn_CerrarSesion.ForeColor = System.Drawing.Color.GhostWhite;
             this.btn_CerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btn_CerrarSesion.Image")));
             this.btn_CerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_CerrarSesion.Location = new System.Drawing.Point(0, 926);
+            this.btn_CerrarSesion.Location = new System.Drawing.Point(0, 1032);
             this.btn_CerrarSesion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_CerrarSesion.Name = "btn_CerrarSesion";
             this.btn_CerrarSesion.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btn_CerrarSesion.Size = new System.Drawing.Size(312, 106);
+            this.btn_CerrarSesion.Size = new System.Drawing.Size(312, 111);
             this.btn_CerrarSesion.TabIndex = 12;
             this.btn_CerrarSesion.Text = "Cerrar Sesión";
             this.btn_CerrarSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -155,6 +175,7 @@
             // 
             // btn_Interes
             // 
+            this.btn_Interes.AutoSize = true;
             this.btn_Interes.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_Interes.FlatAppearance.BorderSize = 0;
             this.btn_Interes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -296,16 +317,18 @@
             this.panelForms.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelForms.Location = new System.Drawing.Point(338, 175);
             this.panelForms.Name = "panelForms";
-            this.panelForms.Size = new System.Drawing.Size(1556, 845);
+            this.panelForms.Size = new System.Drawing.Size(1556, 870);
             this.panelForms.TabIndex = 4;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::AdminInversiones.Properties.Resources.Which_Type_of_Investment_Has_the_Highest_Risk_1400x826;
             this.pictureBox1.Location = new System.Drawing.Point(6, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1556, 845);
+            this.pictureBox1.Size = new System.Drawing.Size(1556, 870);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -315,7 +338,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1894, 1020);
+            this.ClientSize = new System.Drawing.Size(1894, 1045);
             this.Controls.Add(this.panelForms);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
@@ -353,6 +376,7 @@
         private System.Windows.Forms.Button btnActulizarInteres;
         private System.Windows.Forms.Button btn_Usuarios;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnDepositosRetiros;
     }
 }
 

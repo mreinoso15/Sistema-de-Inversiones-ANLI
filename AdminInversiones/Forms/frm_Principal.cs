@@ -17,12 +17,7 @@ namespace AdminInversiones
 
 
         public List<Inversiones> inversiones = null;
-        List<double> listaIntereses = null;
-        List<int> listaDias = null;
-        ConexionBD conexionBD;
-        Documentos documento;
-        //Constructor
-
+        
         public frm_Principal()
         {
             InitializeComponent();
@@ -176,6 +171,12 @@ namespace AdminInversiones
         {
             OpenChildForm(new frm_Usuarios(), sender);
             lblTitleBar.Text = "Usuarios";
+        }
+
+        private void btnDepositosRetiros_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frm_DepositosRetiros(), sender);
+            lblTitleBar.Text = "Depositos y Retiros";
         }
     }
 }

@@ -298,7 +298,7 @@ namespace AdminInversiones
 
         private void btnPDFImpuestos_Click(object sender, EventArgs e)
         {
-            generarReporteImpuestos(Int32.Parse(cmbSociosImpuestos.SelectedValue.ToString()));
+            if(generarReporteImpuestos(Int32.Parse(cmbSociosImpuestos.SelectedValue.ToString())) == false) return ;
             SaveFileDialog savefile = new SaveFileDialog();
             savefile.Filter = "Archivos PDF(*.pdf)|*.pdf";
             savefile.FileName = string.Format("{0}.pdf", "Reporte impuestos - " + dtpFechaImpuestos.Value.ToString("MM-yyyy"));
@@ -320,7 +320,7 @@ namespace AdminInversiones
             }
         }
 
-        private void generarReporteImpuestos(int idusuario)
+        private bool generarReporteImpuestos(int idusuario)
         {
             string fechaInicio = dtpFechaImpuestos.Value.Year.ToString() + "-" +
                           dtpFechaImpuestos.Value.Month.ToString() + "-" +"01";
@@ -350,6 +350,7 @@ namespace AdminInversiones
                 plantillaHTMLImpuestos = plantillaHTMLImpuestos.Replace("@FECHA",DateTime.Parse(fechaInicio).ToString("dd-MMMM-yyyy") + " - " + DateTime.Parse(fechaFinal).ToString("dd-MMMM-yyyy"));
                 plantillaHTMLImpuestos = plantillaHTMLImpuestos.Replace("@FILASIMPUESTO", filas);
                 plantillaHTMLImpuestos = plantillaHTMLImpuestos.Replace("@TOTAL", "$ " + total.ToString());
+                return true;
             }
             else
             {
@@ -357,9 +358,8 @@ namespace AdminInversiones
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
+                return false;
             }
-                
-
         
         }
 

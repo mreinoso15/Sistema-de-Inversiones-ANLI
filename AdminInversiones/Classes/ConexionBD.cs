@@ -3,6 +3,7 @@ using iText.StyledXmlParser.Jsoup.Select;
 using MySql.Data.MySqlClient;
 using Org.BouncyCastle.Utilities.Collections;
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlTypes;
@@ -18,13 +19,13 @@ namespace AdminInversiones
         private MySqlConnection conn1, conn2;
         public ConexionBD()
         {
-            conn2 = new MySqlConnection("server=" + "localhost" + "; " +
+            conn1 = new MySqlConnection("server=" + "192.168.1.84" + "; " +
                                         "port=" + "3306" + "; " +
                                         "user id=" + "root" + "; " +
-                                        "password=" + "EpicLULZ1" + "; " +
-                                        "database=proyecto_anli_prueba;");
+                                        "password=" + "Conque2" + "; " +
+                                        "database=alfa_newlife;");
 
-            conn1 = new MySqlConnection("server=" + "201.120.42.39" + "; " +
+            conn2 = new MySqlConnection("server=" + "201.120.42.39" + "; " +
                                         "port=" + "3306" + "; " +
                                         "user id=" + "root" + "; " +
                                         "password=" + "Conque2" + "; " +
@@ -210,7 +211,7 @@ namespace AdminInversiones
                                        "fecha_registro AS 'Fecha de Registro', " +
                                        "cantidad_ahorro + cantidad_inversion AS 'Total', " +
                                        "IF(estatus_usuario = 1,\"ACTIVO\",\"BAJA\") AS 'ESTATUS'" +
-                               "from usuario ORDER BY estatus_usuario ASC;;";
+                               "from usuario ORDER BY estatus_usuario ASC;";
                 //SE DECLARA LA TABLA DONDE SE VACIAN LOS DATOS QUE REGRESA LA QUERY SQL
                 DataTable dataTable = new DataTable();
 
@@ -337,27 +338,6 @@ namespace AdminInversiones
                     MessageBox.Show(ex.Message, "OBTENER IMPUESTOS");
                 }
                 return 0;
-            }//USING  
-        }
-        public void insertarImpuestosRetiro(int id, double cantidadPagar)
-        {
-            using (conn1)
-            {
-                try
-                {
-                    //QUERY QUE SE VA A EJECUTAR
-                    string query = "INSERT INTO `impuestos_intereses`(`id_usuario`,`cantidad_pagar`,`fecha_impuesto`,`estado_pagado`)" +
-                                   $"VALUES({id}, {cantidadPagar}, DATE(NOW()), 0);";
-                    //SE PREPARA EL COMANDO SQL CON EL QUERY Y LA CONEXION
-                    MySqlCommand cmd = new MySqlCommand(query, conn1);
-                    conn1.Open();
-                    //SE EJECUTA EL COMANDO
-                    cmd.ExecuteNonQuery();
-                }
-                catch (MySqlException ex)
-                {
-                    MessageBox.Show(ex.Message, "insertarImpuestosUsuarios");
-                }
             }//USING  
         }
         public void aceptarSolicitudDeposito(int id, string folio)
@@ -633,7 +613,8 @@ namespace AdminInversiones
                 try
                 {
                     //QUERY QUE SE VA A EJECUTAR
-                    string query = $"SELECT SUM(cantidad_pagar) FROM impuestos_intereses WHERE MONTH(fecha_impuesto) = MONTH('{fechaCalcular}');";
+                    string query = $"SELECT SUM(cantidad_pagar) FROM impuestos_intereses WHERE MONTH(fecha_impuesto) = MONTH('{fechaCalcular} AND " +
+                                   $"YEAR(fecha_aprobacion) = YEAR('{fechaCalcular}'');";
                     //SE PREPARA EL COMANDO SQL CON EL QUERY Y LA CONEXION
                     MySqlCommand cmd = new MySqlCommand(query, conn1);
                     conn1.Open();
@@ -1086,7 +1067,7 @@ namespace AdminInversiones
             {
                 try
                 {
-                    string query = "SELECT `id_usuario` FROM usuario WHERE estatus_usuario = 1 ORDER BY id_usuario ASC;";
+                    string query = "SELECT `id_usuario`, `nombre_usuario` FROM usuario WHERE estatus_usuario = 1 ORDER BY id_usuario ASC;";
                     MySqlDataAdapter da = new MySqlDataAdapter(query, conn1);
                     conn1.Open();
                     DataSet ds = new DataSet();
@@ -1104,6 +1085,7 @@ namespace AdminInversiones
                 }
             }
         }
+  
         public List<T> llenarLista<T>(IDataReader dataReader)
         {
             List<T> lista = new List<T>();
@@ -1223,6 +1205,145 @@ namespace AdminInversiones
                     conn1.Open();
                     //SE EJECUTA EL COMANDO
                     cmd.ExecuteNonQuery();
+
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }//USING
+        }
+
+        internal DataTable obtenerDepositosUsuario(int idusuario, string fecha)
+        {
+            //SE DECLARA A QUE BASE DE DATOS SE CONECTARA
+            using (conn1)
+            {
+                //SE DECLARA EL COMANDO SQL QUE SE DESEA EJECUTAR 
+                string query = "SELECT d.id_solicitud AS 'ID Solicitud', " +
+                                      "d.id_deposito AS 'ID Deposito', " +
+                                      "d.cantidad_deposito AS 'Cantidad', " +
+                                      "d.fecha_aprobacion AS 'Fecha' " +
+                               "FROM depositos AS d " +
+                               "INNER JOIN solicitudes_deposito AS sd ON d.id_solicitud = sd.id_solicitud " +
+                               "INNER JOIN usuario AS u ON sd.id_usuario = u.id_usuario " +
+                               $"WHERE sd.id_usuario =  {idusuario} AND d.estado_interes = 0 AND " +
+                               $"MONTH(fecha_aprobacion) = MONTH('{fecha}') AND " +
+                               $"YEAR(fecha_aprobacion) = YEAR('{fecha}') AND d.tipo_deposito < 3;";
+                //SE DECLARA LA TABLA DONDE SE VACIAN LOS DATOS QUE REGRESA LA QUERY SQL
+                DataTable dataTable = new DataTable();
+
+                try
+                {
+                    //SE ABRE LA CONEXION CON LA BASE DE DATOS
+                    conn1.Open();
+                    //SE DECLARA EL LECTOR DE DATOS DE LA BASE DE DATOS SQL
+                    MySqlDataReader reader = null;
+                    //SE LE ASIGNA LA INFORMACION QUE REGRESO EL COMANDO SQL
+                    MySqlCommand cmd = new MySqlCommand(query, conn1);
+                    reader = cmd.ExecuteReader();
+                    //SE LLENA LA TABLA PARA PODER MOSTRAR LA INFORMACION AL USUARIO
+                    dataTable.Load(reader);
+                    return dataTable;
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                return null;
+            }
+        }
+        internal DataTable obtenerDCalculadosUsuario(int idusuario,string fecha)
+        {
+            //SE DECLARA A QUE BASE DE DATOS SE CONECTARA
+            using (conn1)
+            {
+                //SE DECLARA EL COMANDO SQL QUE SE DESEA EJECUTAR 
+                string query = "SELECT d.id_solicitud AS 'ID Solicitud', " +
+                                      "d.id_deposito AS 'ID Deposito', " +
+                                      "d.cantidad_deposito AS 'Cantidad', " +
+                                      "d.fecha_aprobacion AS 'Fecha' " +
+                               "FROM depositos_calculados AS d " +
+                               "INNER JOIN solicitudes_deposito AS sd ON d.id_solicitud = sd.id_solicitud " +
+                               "INNER JOIN usuario AS u ON sd.id_usuario = u.id_usuario " +
+                               $"WHERE sd.id_usuario =  {idusuario} AND " +
+                               $"MONTH(fecha_aprobacion) = MONTH('{fecha}') AND " +
+                               $"YEAR(fecha_aprobacion) = YEAR('{fecha}') AND d.tipo_deposito < 3;";
+                //SE DECLARA LA TABLA DONDE SE VACIAN LOS DATOS QUE REGRESA LA QUERY SQL
+                DataTable dataTable = new DataTable();
+
+                try
+                {
+                    //SE ABRE LA CONEXION CON LA BASE DE DATOS
+                    conn1.Open();
+                    //SE DECLARA EL LECTOR DE DATOS DE LA BASE DE DATOS SQL
+                    MySqlDataReader reader = null;
+                    //SE LE ASIGNA LA INFORMACION QUE REGRESO EL COMANDO SQL
+                    MySqlCommand cmd = new MySqlCommand(query, conn1);
+                    reader = cmd.ExecuteReader();
+                    //SE LLENA LA TABLA PARA PODER MOSTRAR LA INFORMACION AL USUARIO
+                    dataTable.Load(reader);
+                    return dataTable;
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                return null;
+            }
+        }
+
+        internal DataTable obtenerRetirosUsuario(int idusuario, string fecha)
+        {
+            //SE DECLARA A QUE BASE DE DATOS SE CONECTARA
+            using (conn1)
+            {
+                //SE DECLARA EL COMANDO SQL QUE SE DESEA EJECUTAR 
+                string query = "SELECT r.id_solicitud AS 'ID Solicitud', r.id_retiro AS 'ID Retiro', r.cantidad_retiro AS 'Cantidad', r.fecha_aprobacion AS 'Fecha' " +
+                               "FROM retiros AS r INNER JOIN solicitudes_retiro AS sr ON r.id_solicitud = sr.id_solicitud " +
+                               "INNER JOIN usuario AS u ON sr.id_usuario = u.id_usuario " +
+                               $"WHERE sr.id_usuario =  {idusuario} AND MONTH(fecha_aprobacion) = MONTH('{fecha}') AND YEAR(fecha_aprobacion) = YEAR('{fecha}');";
+                //SE DECLARA LA TABLA DONDE SE VACIAN LOS DATOS QUE REGRESA LA QUERY SQL
+                DataTable dataTable = new DataTable();
+
+                try
+                {
+                    //SE ABRE LA CONEXION CON LA BASE DE DATOS
+                    conn1.Open();
+                    //SE DECLARA EL LECTOR DE DATOS DE LA BASE DE DATOS SQL
+                    MySqlDataReader reader = null;
+                    //SE LE ASIGNA LA INFORMACION QUE REGRESO EL COMANDO SQL
+                    MySqlCommand cmd = new MySqlCommand(query, conn1);
+                    reader = cmd.ExecuteReader();
+                    //SE LLENA LA TABLA PARA PODER MOSTRAR LA INFORMACION AL USUARIO
+                    dataTable.Load(reader);
+                    return dataTable;
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                return null;
+            }
+        }
+
+        internal void borrarRetirosNulos(int idusuarios)
+        {
+            using (conn1)
+            {
+                try
+                {
+                    //QUERY QUE SE VA A EJECUTAR    
+                    string query = $"DELETE FROM retiros WHERE cantidad_retiro = 0";
+                    string query2 = $"DELETE FROM solicitudes_retiro WHERE cantidad_retiro = 0 and id_usuario = {idusuarios}";
+                    //SE PREPARA EL COMANDO SQL CON EL QUERY Y LA CONEXION
+                    MySqlCommand cmd = new MySqlCommand(query, conn1);
+                    MySqlCommand cmd2 = new MySqlCommand(query2, conn1);
+                    conn1.Open();
+        
+                    //SE EJECUTA EL COMANDO
+                    cmd.ExecuteNonQuery();
+                    cmd2.ExecuteNonQuery();
 
                 }
                 catch (MySqlException ex)
